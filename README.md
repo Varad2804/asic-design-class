@@ -53,15 +53,18 @@ Add | less to the end for easier viewing:
 riscv64-unknown-elf-objdump -d sum1ton.o | less
 ```
    ![Alt text](images/image5.png)
+   
 3. We'll obtain the output once more, and this time we'll focus directly on the main section. To determine the number of instructions, we'll subtract the address of the first instruction of the current section from that of the next section, then divide the result by 4 (since the increment is 4 for each step). This method allows us to conclude that there are 15 sets of instructions when using O1.
-   ![Alt text](images/image6.png)
+   
+![Alt text](images/image6.png)
 
 To verify we can do it using a calculator:
    ![Alt text](images/image13.png)
 
 4.Now we shift back to the first tab and compile the same code using RISCV again but this time with Ofast flag.
 
-   ![Alt text](images/image7.png)
+![Alt text](images/image7.png)
+
 5. Now going back to tab 2 and rerunning the same command to get the number of instructions, we see that the number of instructions required is less to execute the same program. We can again calculate using the abovementioned method to get the number of instructions as 12. 
    ![Alt text](images/image8.png)
 
@@ -81,7 +84,8 @@ To verify we can do it using a calculator:
    ```bash
    reg 0 a2
    ```
-   Now press enter and it'll run the next instruction which is lui a2, 0x1. This instruction stands for load upper immediate. It'll load the upper bits of a2 register by 01. Now again check the content of a2 and you'll see that it has been updated.
+   Now press enter and it'll run the next instruction which is lui a2, 0x1. This instruction stands for load upper immediate. It'll load the upper bits of a2 
+   register by 01. Now again check the content of a2 and you'll see that it has been updated.
       ![Alt text](images/image10.png)
    3. Now press Enter to go to the next instruction and run it.
    ```bash
@@ -97,6 +101,8 @@ To verify we can do it using a calculator:
    ```
    Now press enter to run the next instruction. And again check the sp value. We shall see that its value has reduced by 16 (10 in HEX).
       ![Alt text](images/image11.png)
+      ![Alt text](images/image12.png)
+
    
 
 
