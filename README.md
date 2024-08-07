@@ -13,7 +13,7 @@ This project demonstrates how to compile and run a simple C program that calcula
    ```bash
    cd
    ```
-   ![Alt text](images/.png)
+   ![Alt text](images/Screenshot_from_2024-08-07_17-52-35.png)
 
 3. Create a .c file that calculates sum of numbers from 1 to N.
    Add image2
