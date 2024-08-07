@@ -65,6 +65,40 @@ To verify we can do it using a calculator:
 5. Now going back to tab 2 and rerunning the same command to get the number of instructions, we see that the number of instructions required is less to execute the same program. We can again calculate using the abovementioned method to get the number of instructions as 12. 
    ![Alt text](images/image8.png)
 
+# Debug Mode in Spike on RISC-V
+
+1. After compiling the code on RISCV compiler its time to debug/run the code using spike.
+   ```bash
+   spike -d pk sum1ton.o
+   ```
+   Then it enters the debug mode. One can run the instruction till instruction he wants to as shown belowin the example:
+   ```bash
+   until pc 0 100b0
+   ```
+   Now assembly code has all instructions before 100b0
+   ![Alt text](images/image9.png)
+2. Using this one can track the values in the register(variables). As is demonstrated below we check for reg a2.
+   ```bash
+   reg 0 a2
+   ```
+   Now press enter and it'll run the next instruction which is lui a2, 0x1. This instruction stands for load upper immediate. It'll load the upper bits of a2 register by 01. Now again check the content of a2 and you'll see that it has been updated.
+      ![Alt text](images/image10.png)
+   3. Now press Enter to go to the next instruction and run it.
+   ```bash
+   addi sp,sp,-16
+   ```
+   This instruction will add -16 (-10 in HEX) to sp (stack pointer). Quit the debug mode, and again enter but this time go till 100b8 with command.
+   ```bash
+   until pc 0 100b8
+   ```
+   check the content of sp with this command
+   ```bash
+   reg 0 sp
+   ```
+   Now press enter to run the next instruction. And again check the sp value. We shall see that its value has reduced by 16 (10 in HEX).
+      ![Alt text](images/image11.png)
+   
+
 
 
 
