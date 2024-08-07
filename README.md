@@ -56,6 +56,16 @@ riscv64-unknown-elf-objdump -d sum1ton.o | less
 3. We'll obtain the output once more, and this time we'll focus directly on the main section. To determine the number of instructions, we'll subtract the address of the first instruction of the current section from that of the next section, then divide the result by 4 (since the increment is 4 for each step). This method allows us to conclude that there are 15 sets of instructions when using O1.
    ![Alt text](images/image6.png)
 
+To verify we can do it using a calculator:
+   ![Alt text](images/image9.png)
+
+4.Now we shift back to the first tab and compile the same code using RISCV again but this time with Ofast flag.
+
+   ![Alt text](images/image7.png)
+5. Now going back to tab 2 and running again the same commands to get the number of instructions, we see that number of instructions required are less to execute the same program.
+   ![Alt text](images/image8.png)
+
+
 
 
 
