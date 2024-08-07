@@ -13,8 +13,9 @@ This project demonstrates how to compile and run a simple C program that calcula
    ```bash
    cd
    ```
-   path/to/your/image1.png
-2. Create a .c file that calculates sum of numbers from 1 to N.
+   ![Alt text](images/.png)
+
+3. Create a .c file that calculates sum of numbers from 1 to N.
    Add image2
 4. Now run this programme using the gcc compiler
    
