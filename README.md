@@ -23,7 +23,33 @@ gcc sum1ton.c
 ## Compile using RISCV
 
 ### steps:
-1. 
+1. First check the code again using the cat command for correctness then Compile the Code using the RISCV gcc.
+```bash
+cat sum1ton.c
+```
+
+Use the RISC-V GCC compiler:
+```bash
+riscv64-unknown-elf-gcc -O1 -o sum1ton.o sum1ton.c
+```
+This generates the file sum1ton.o.
+
+2. Generate Assembly Code
+Now using the command shown in the figure or below, we'll get the assembly code of our c program. We'll again run the same command adding | less in the end for easy viewing of the assembly code.
+Get the assembly code of the C program:
+```bash
+riscv64-unknown-elf-objdump -d sum1ton.o
+```
+Add | less to the end for easier viewing:
+```bash
+riscv64-unknown-elf-objdump -d sum1ton.o | less
+```
+3. 
+
+
+
+
+
 
    
 
