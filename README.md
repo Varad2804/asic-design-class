@@ -86,7 +86,8 @@ reg 0 a2
 ```
 Now press enter and it'll run the next instruction which is lui a2, 0x1. This instruction stands for load upper immediate. It'll load the upper bits of a2 
 register by 01. Now again check the content of a2 and you'll see that it has been updated.
-   ![Alt text](images/image10.png)
+![Alt text](images/image10.png)
+
 3. Now press Enter to go to the next instruction and run it.
 ```bash
 addi sp,sp,-16
