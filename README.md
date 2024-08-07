@@ -32,15 +32,15 @@ This part(task-1 and task-2) demonstrates how to compile and run a simple C prog
 
 ### steps:
 1. First check the code again using the cat command for correctness then Compile the Code using the RISCV gcc.
-   ```bash
-   cat sum1ton.c
-   ```
+```bash
+cat sum1ton.c
+```
 Use the RISC-V GCC compiler:
-   ```bash
-   riscv64-unknown-elf-gcc -O1 -o sum1ton.o sum1ton.c
-   ```
+```bash
+riscv64-unknown-elf-gcc -O1 -o sum1ton.o sum1ton.c
+```
 This generates the file sum1ton.o.
-   ![Alt text](images/image4.png)
+![Alt text](images/image4.png)
 
 2. Generate Assembly Code:
 Now using the command shown in the figure or below, we'll get the assembly code of our c program. We'll again run the same command adding | less in the end for easy viewing of the assembly code.
@@ -81,27 +81,27 @@ To verify we can do it using a calculator:
    Now assembly code has all instructions before 100b0
    ![Alt text](images/image9.png)
 2. Using this one can track the values in the register(variables). As is demonstrated below we check for reg a2.
-   ```bash
-   reg 0 a2
-   ```
-   Now press enter and it'll run the next instruction which is lui a2, 0x1. This instruction stands for load upper immediate. It'll load the upper bits of a2 
-   register by 01. Now again check the content of a2 and you'll see that it has been updated.
-      ![Alt text](images/image10.png)
-   3. Now press Enter to go to the next instruction and run it.
-   ```bash
-   addi sp,sp,-16
-   ```
-   This instruction will add -16 (-10 in HEX) to sp (stack pointer). Quit the debug mode, and again enter but this time go till 100b8 with command.
-   ```bash
-   until pc 0 100b8
-   ```
-   check the content of sp with this command
-   ```bash
-   reg 0 sp
-   ```
-   Now press enter to run the next instruction. And again check the sp value. We shall see that its value has reduced by 16 (10 in HEX).
-      ![Alt text](images/image11.png)
-      ![Alt text](images/image12.png)
+```bash
+reg 0 a2
+```
+Now press enter and it'll run the next instruction which is lui a2, 0x1. This instruction stands for load upper immediate. It'll load the upper bits of a2 
+register by 01. Now again check the content of a2 and you'll see that it has been updated.
+   ![Alt text](images/image10.png)
+3. Now press Enter to go to the next instruction and run it.
+```bash
+addi sp,sp,-16
+```
+This instruction will add -16 (-10 in HEX) to sp (stack pointer). Quit the debug mode, and again enter but this time go till 100b8 with command.
+```bash
+until pc 0 100b8
+```
+check the content of sp with this command
+```bash
+reg 0 sp
+```
+Now press enter to run the next instruction. And again check the sp value. We shall see that its value has reduced by 16 (10 in HEX).
+   ![Alt text](images/image11.png)
+   ![Alt text](images/image12.png)
 
    
 
