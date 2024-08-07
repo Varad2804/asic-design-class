@@ -3,7 +3,7 @@ This is Varad Bharadiya (IMT2021532). Course - Physical Design of ASICs ( VLS508
 
 # Sum Calculation in C of numbers from 1 to N. Task-1 and Task-2
 
-This part(task-1 and task-2) demonstrates how to compile and run a simple C program that calculates the sum of numbers from 1 to 10 using both GCC and the RISC-V compiler. Additionally, it covers basic debugging using Spike on a RISC-V architecture.
+This part(task-1 and task-2) demonstrates how to compile and run a simple C program that calculates the sum of numbers from 1 to N using both GCC and the RISC-V compiler. Additionally, it covers basic debugging using Spike on a RISC-V architecture.
 
 ## Compiling the C Code with GCC
 
