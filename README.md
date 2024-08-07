@@ -42,7 +42,7 @@ Use the RISC-V GCC compiler:
 This generates the file sum1ton.o.
    ![Alt text](images/image4.png)
 
-2. Generate Assembly Code
+2. Generate Assembly Code:
 Now using the command shown in the figure or below, we'll get the assembly code of our c program. We'll again run the same command adding | less in the end for easy viewing of the assembly code.
 Get the assembly code of the C program:
 ```bash
