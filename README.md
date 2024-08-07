@@ -12,27 +12,31 @@ This project demonstrates how to compile and run a simple C program that calcula
 1. **Navigate to Home Directory**
    ```bash
    cd
+   ```
+   path/to/your/image1.png
 2. Create a .c file that calculates sum of numbers from 1 to N.
-3. Now run this programme using the gcc compiler
+   Add image2
+4. Now run this programme using the gcc compiler
    
- ```bash
-gcc sum1ton.c
-./a.out
-```
-
+    ```bash
+   gcc sum1ton.c
+   ./a.out
+    ```
+    Add image3.
+   
 ## Compile using RISCV
 
 ### steps:
 1. First check the code again using the cat command for correctness then Compile the Code using the RISCV gcc.
-```bash
-cat sum1ton.c
-```
-
+   ```bash
+   cat sum1ton.c
+   ```
 Use the RISC-V GCC compiler:
-```bash
-riscv64-unknown-elf-gcc -O1 -o sum1ton.o sum1ton.c
-```
+   ```bash
+   riscv64-unknown-elf-gcc -O1 -o sum1ton.o sum1ton.c
+   ```
 This generates the file sum1ton.o.
+   Add image4
 
 2. Generate Assembly Code
 Now using the command shown in the figure or below, we'll get the assembly code of our c program. We'll again run the same command adding | less in the end for easy viewing of the assembly code.
@@ -44,6 +48,7 @@ Add | less to the end for easier viewing:
 ```bash
 riscv64-unknown-elf-objdump -d sum1ton.o | less
 ```
+   Add image5
 3. 
 
 
