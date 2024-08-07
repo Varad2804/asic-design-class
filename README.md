@@ -10,9 +10,12 @@ This project demonstrates how to compile and run a simple C program that calcula
 ### Steps:
 
 1. **Navigate to Home Directory**
+   Open terminal
+   use this command to get to home directory.
    ```bash
    cd
    ```
+   Then open the leafpad editor for writing the c code.
    ![Alt text](images/image1.png)
 
 3. Create a .c file that calculates sum of numbers from 1 to N.
