@@ -102,6 +102,7 @@ reg 0 sp
 ```
 Now press enter to run the next instruction. And again check the sp value. We shall see that its value has reduced by 16 (10 in HEX).
    ![Alt text](images/image11.png)
+   To verify:
    ![Alt text](images/image12.png)
 
    
