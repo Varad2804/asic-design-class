@@ -57,12 +57,12 @@ riscv64-unknown-elf-objdump -d sum1ton.o | less
    ![Alt text](images/image6.png)
 
 To verify we can do it using a calculator:
-   ![Alt text](images/image9.png)
+   ![Alt text](images/image13.png)
 
 4.Now we shift back to the first tab and compile the same code using RISCV again but this time with Ofast flag.
 
    ![Alt text](images/image7.png)
-5. Now going back to tab 2 and running again the same commands to get the number of instructions, we see that number of instructions required are less to execute the same program.
+5. Now going back to tab 2 and rerunning the same command to get the number of instructions, we see that the number of instructions required is less to execute the same program. We can again calculate using the abovementioned method to get the number of instructions as 12. 
    ![Alt text](images/image8.png)
 
 
