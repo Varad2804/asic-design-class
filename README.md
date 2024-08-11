@@ -126,3 +126,97 @@ This part (Task-1 and Task-2) demonstrates how to compile and run a simple C pro
    - To verify:
 
    ![Alt text](images/image12.png)
+
+
+---
+# RISC-V Instruction Formats
+
+In the RISC-V architecture, instruction formats serve as a 'contract' between assembly language and hardware. When an assembly language command is executed, the hardware must understand precisely what to do. These instructions are encoded in a series of 0s and 1s, representing different operations, data locations, and more.
+
+RISC-V defines six instruction formats, each with its own structure and purpose:
+
+## 1. R-Type (Register)
+
+**R** stands for **Register**. This format is used for arithmetic and logical operations involving three registers.
+
+- **Fields:**
+  - **funct7 (7 bits):** Function code for additional instruction differentiation.
+  - **rs2 (5 bits):** Second source register.
+  - **rs1 (5 bits):** First source register.
+  - **funct3 (3 bits):** Function code for primary instruction differentiation.
+  - **rd (5 bits):** Destination register.
+  - **opcode (7 bits):** Basic operation code for R-type instructions (0110011 for integer operations).
+
+- **Examples:** `ADD`, `SUB`, `OR`, `XOR`
+
+## 2. I-Type (Immediate)
+
+I-type instructions are used for operations that involve an immediate value along with one or two registers.
+
+- **Fields:**
+  - **immediate (12 bits):** Immediate value used for operations.
+  - **rs1 (5 bits):** Source register.
+  - **funct3 (3 bits):** Function code for instruction differentiation.
+  - **rd (5 bits):** Destination register.
+  - **opcode (7 bits):** Basic operation code for I-type instructions.
+
+- **Examples:** `ADDI`, `LW`, `JALR`
+
+## 3. S-Type (Store)
+
+S-type instructions are used for store operations, where data is stored from a register into memory.
+
+- **Fields:**
+  - **imm[11:5] (7 bits):** Upper 7 bits of the immediate value.
+  - **rs2 (5 bits):** Second source register (contains the data to be stored).
+  - **rs1 (5 bits):** First source register (base address register).
+  - **funct3 (3 bits):** Function code for instruction differentiation.
+  - **imm[4:0] (5 bits):** Lower 5 bits of the immediate value.
+  - **opcode (7 bits):** Basic operation code for S-type instructions.
+
+- **Examples:** `SW`, `SB`, `SH`
+
+## 4. B-Type (Branch)
+
+B-type instructions are used for conditional branch operations, altering the flow of execution based on comparisons between two registers.
+
+- **Fields:**
+  - **imm[12] (1 bit):** The 12th bit of the immediate value.
+  - **imm[10:5] (6 bits):** The 10th to 5th bits of the immediate value.
+  - **rs2 (5 bits):** Second source register.
+  - **rs1 (5 bits):** First source register.
+  - **funct3 (3 bits):** Function code for instruction differentiation.
+  - **imm[4:1] (4 bits):** The 4th to 1st bits of the immediate value.
+  - **imm[11] (1 bit):** The 11th bit of the immediate value.
+  - **opcode (7 bits):** Basic operation code for B-type instructions.
+
+- **Examples:** `BEQ`, `BNE`, `BLT`, `BGE`
+
+## 5. U-Type (Upper Immediate)
+
+U-type instructions are used for operations involving large immediate values, typically for loading upper immediate values or computing addresses.
+
+- **Fields:**
+  - **immediate[31:12] (20 bits):** The upper 20 bits of the immediate value.
+  - **rd (5 bits):** Destination register.
+  - **opcode (7 bits):** Operation code for U-type instructions.
+
+- **Examples:** `LUI`, `AUIPC`
+
+## 6. J-Type (Jump)
+
+J-type instructions are used for jump operations, altering the program control flow by jumping to a specified address.
+
+- **Fields:**
+  - **imm[20] (1 bit):** The 20th bit of the immediate value.
+  - **imm[10:1] (10 bits):** The 10th to 1st bits of the immediate value.
+  - **imm[11] (1 bit):** The 11th bit of the immediate value.
+  - **imm[19:12] (8 bits):** The 19th to 12th bits of the immediate value.
+  - **rd (5 bits):** Destination register where the return address is stored.
+  - **opcode (7 bits):** Operation code for J-type instructions.
+
+- **Examples:** `JAL`
+
+---
+
+This document provides an overview of the different instruction formats in the RISC-V architecture, explaining how each format is structured and used in various operations.
