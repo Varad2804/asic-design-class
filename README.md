@@ -405,47 +405,47 @@ This document provides an overview of the different instruction formats in the R
 | SLL r15, r11, r2  | 0x002597B3                        | 0x00208783                  |
 
 We will be using gtkwave to analyse the waveforms
-   ![Alt text](images2/image1.png)
+   ![Alt text](image2/image1.png)
 
 First we start with analysis of our instructions provided for the activity in RISC-V
 1.| ADD r5, r6, r7    | 0x007302B3                     
 
-   ![Alt text](images2/image2.png)
+   ![Alt text](image2/image2.png)
    
 2.| SUB r7, r5, r6    | 0x406283B3                      
 
-   ![Alt text](images2/image3.png)
+   ![Alt text](image2/image3.png)
    
 3. | AND r6, r5, r7    | 0x0072F333                     
-   ![Alt text](images2/image4.png)
+   ![Alt text](image2/image4.png)
 
 4. | OR r8, r6, r5     | 0x00536433                      
    
-   ![Alt text](images2/image5.png)
+   ![Alt text](image2/image5.png)
    
 5. | XOR r8, r5, r4    | 0x0042C433                      
 
-   ![Alt text](images2/image6.png)
+   ![Alt text](image2/image6.png)
 
 6. | SLT r10, r2, r4   | 0x00412533          
 
-   ![Alt text](images2/image7.png)
+   ![Alt text](image2/image7.png)
 
 7. | ADDI r12, r3, 5   | 0x00518613                        | 0x00520600                  |
 
-   ![Alt text](images2/image8.png)
+   ![Alt text](image2/image8.png)
 
 8. | SW r3, r1, 4      | 0x0030A223                        | 0x00209181                  |
 
-   ![Alt text](images2/image9.png)
+   ![Alt text](image2/image9.png)
 
 9. | SRL r16, r11, r2  | 0x0025D833                        | 0x00271803                  |
 
-   ![Alt text](images2/image10.png)
+   ![Alt text](image2/image10.png)
 
 10. | BNE r0, r1, 20    | 0x00009A63                        | 0x00f00002                  |
 
-   ![Alt text](images2/image11.png)
+   ![Alt text](image2/image11.png)
 
 We now analyse the gtkwaves for hardcoded ISA
 
