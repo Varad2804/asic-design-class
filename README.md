@@ -224,9 +224,7 @@ RISC-V defines six instruction formats, each with its own structure and purpose:
       - **imm:** Immediate value (20 bits)
     - **Example Instructions:** JAL
 
-### 32-bit Instruction Encoding for Provided Instructions
 
-Below are the specific 32-bit encodings for a set of given RISC-V instructions, broken down by their type and the corresponding hexadecimal code.
 
 ## 32-bit Instruction Encodings
 
