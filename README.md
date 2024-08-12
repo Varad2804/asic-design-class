@@ -132,7 +132,7 @@ This part demonstrates how to use the debug mode in RISCV.(using SPIKE)
 </details>
 
 ---
-# RISC-V Instruction Formats
+# Task-3:RISC-V Instruction Formats
 <details>
 
 In the RISC-V architecture, instruction formats serve as a 'contract' between assembly language and hardware. When an assembly language command is executed, the hardware must understand precisely what to do. These instructions are encoded in a series of 0s and 1s, representing different operations, data locations, and more.
