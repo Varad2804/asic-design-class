@@ -131,6 +131,7 @@ This part demonstrates how to compile and run a simple C program that calculates
 
 ---
 # RISC-V Instruction Formats
+<details>
 
 In the RISC-V architecture, instruction formats serve as a 'contract' between assembly language and hardware. When an assembly language command is executed, the hardware must understand precisely what to do. These instructions are encoded in a series of 0s and 1s, representing different operations, data locations, and more.
 
@@ -219,5 +220,6 @@ J-type instructions are used for jump operations, altering the program control f
 - **Examples:** `JAL`
 
 ---
+</details>
 
 This document provides an overview of the different instruction formats in the RISC-V architecture, explaining how each format is structured and used in various operations.
