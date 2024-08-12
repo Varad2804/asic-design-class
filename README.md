@@ -228,75 +228,118 @@ RISC-V defines six instruction formats, each with its own structure and purpose:
 
 Below are the specific 32-bit encodings for a set of given RISC-V instructions, broken down by their type and the corresponding hexadecimal code.
 
-1. **ADD r5, r6, r7 (R-Type)**
-    - **Format:** opcode | rd | funct3 | rs1 | rs2 | funct7
-    - **Encoding:**
-      - **opcode:** 0110011 (7 bits)
-      - **rd (r5):** 00101 (5 bits)
-      - **funct3:** 000 (3 bits)
-      - **rs1 (r6):** 00110 (5 bits)
-      - **rs2 (r7):** 00111 (5 bits)
-      - **funct7:** 0000000 (7 bits)
-    - **32-bit Binary:** 0000000 00111 00110 000 00101 0110011
-    - **Hexadecimal:** 0x00c30533
+## 32-bit Instruction Encodings
 
-2. **SUB r7, r5, r6 (R-Type)**
-    - **Format:** opcode | rd | funct3 | rs1 | rs2 | funct7
-    - **Encoding:**
-      - **opcode:** 0110011 (7 bits)
-      - **rd (r7):** 00111 (5 bits)
-      - **funct3:** 000 (3 bits)
-      - **rs1 (r5):** 00101 (5 bits)
-      - **rs2 (r6):** 00110 (5 bits)
-      - **funct7:** 0100000 (7 bits)
-    - **32-bit Binary:** 0100000 00110 00101 000 00111 0110011
-    - **Hexadecimal:** 0x40b302b3
+Below are the 32-bit instruction encodings for the given assembly instructions:
 
-3. **ADDI r12, r3, 5 (I-Type)**
-    - **Format:** opcode | rd | funct3 | rs1 | imm
-    - **Encoding:**
-      - **opcode:** 0010011 (7 bits)
-      - **rd (r12):** 01100 (5 bits)
-      - **funct3:** 000 (3 bits)
-      - **rs1 (r3):** 00011 (5 bits)
-      - **imm:** 000000000101 (12 bits)
-    - **32-bit Binary:** 000000000101 00011 000 01100 0010011
-    - **Hexadecimal:** 0x00530693
+1. **ADD r5, r6, r7** (R-Type)
+   - **Opcode**: `0110011`
+   - **funct3**: `000`
+   - **funct7**: `0000000`
+   - **rs1**: `00110` (r6)
+   - **rs2**: `00111` (r7)
+   - **rd**: `00101` (r5)
+   - **Instruction**: `0000000 00111 00110 000 00101 0110011`
+   - **Hex**: `0x00E302B3`
 
-4. **SW r3, r1, 4 (S-Type)**
-    - **Format:** opcode | imm[11:7] | rs2 | rs1 | funct3 | imm[4:0]
-    - **Encoding:**
-      - **opcode:** 0100011 (7 bits)
-      - **imm[11:7]:** 00000 (5 bits)
-      - **rs2 (r3):** 00011 (5 bits)
-      - **rs1 (r1):** 00001 (5 bits)
-      - **funct3:** 010 (3 bits)
-      - **imm[4:0]:** 00100 (5 bits)
-    - **32-bit Binary:** 0000000 00011 00001 010 00100 0100011
-    - **Hexadecimal:** 0x00312023
+2. **SUB r7, r5, r6** (R-Type)
+   - **Opcode**: `0110011`
+   - **funct3**: `000`
+   - **funct7**: `0100000`
+   - **rs1**: `00101` (r5)
+   - **rs2**: `00110` (r6)
+   - **rd**: `00111` (r7)
+   - **Instruction**: `0100000 00110 00101 000 00111 0110011`
+   - **Hex**: `0x40C283B3`
 
-5. **BEQ r1, r0, 20 (B-Type)**
-    - **Format:** opcode | imm[12] | imm[10:5] | rs2 | rs1 | funct3 | imm[4:1] | imm[11]
-    - **Encoding:**
-      - **opcode:** 1100011 (7 bits)
-      - **imm[12]:** 0 (1 bit)
-      - **imm[10:5]:** 000010 (6 bits)
-      - **rs2 (r0):** 00000 (5 bits)
-      - **rs1 (r1):** 00001 (5 bits)
-      - **funct3:** 000 (3 bits)
-      - **imm[4:1]:** 0100 (4 bits)
-      - **imm[11]:** 0 (1 bit)
-    - **32-bit Binary:** 0000000 00000 00001 000 0100 1100011
-    - **Hexadecimal:** 0x00400063
+3. **AND r6, r5, r7** (R-Type)
+   - **Opcode**: `0110011`
+   - **funct3**: `111`
+   - **funct7**: `0000000`
+   - **rs1**: `00101` (r5)
+   - **rs2**: `00111` (r7)
+   - **rd**: `00110` (r6)
+   - **Instruction**: `0000000 00111 00101 111 00110 0110011`
+   - **Hex**: `0x00F2C333`
 
-6. **LUI r2, 0x12345 (U-Type)**
-    - **Format:** opcode | rd | imm[31:12]
-    - **Encoding:**
-      - **opcode:** 0110111 (7 bits)
-      - **rd (r2):** 00010 (5 bits)
-      - **imm[31:12]:** 00010010001101000101 (20 bits)
-    - **32-bit Binary:** 00010010001101000101 00010 0110111
-    - **Hexadecimal:** 0x12345037
+4. **OR r8, r6, r5** (R-Type)
+   - **Opcode**: `0110011`
+   - **funct3**: `110`
+   - **funct7**: `0000000`
+   - **rs1**: `00110` (r6)
+   - **rs2**: `00101` (r5)
+   - **rd**: `01000` (r8)
+   - **Instruction**: `0000000 00101 00110 110 01000 0110011`
+   - **Hex**: `0x00B30333`
+
+5. **XOR r8, r5, r4** (R-Type)
+   - **Opcode**: `0110011`
+   - **funct3**: `100`
+   - **funct7**: `0000000`
+   - **rs1**: `00101` (r5)
+   - **rs2**: `00100` (r4)
+   - **rd**: `01000` (r8)
+   - **Instruction**: `0000000 00100 00101 100 01000 0110011`
+   - **Hex**: `0x008283B3`
+
+6. **SLT r10, r2, r4** (R-Type)
+   - **Opcode**: `0110011`
+   - **funct3**: `010`
+   - **funct7**: `0000000`
+   - **rs1**: `00010` (r2)
+   - **rs2**: `00100` (r4)
+   - **rd**: `01010` (r10)
+   - **Instruction**: `0000000 00100 00010 010 01010 0110011`
+   - **Hex**: `0x00411333`
+
+7. **ADDI r12, r3, 5** (I-Type)
+   - **Opcode**: `0010011`
+   - **funct3**: `000`
+   - **imm**: `0000000000000101` (5)
+   - **rs1**: `00011` (r3)
+   - **rd**: `01100` (r12)
+   - **Instruction**: `000000000101 00011 000 01100 0010011`
+   - **Hex**: `0x00518193`
+
+8. **SW r3, r1, 4** (S-Type)
+   - **Opcode**: `0100011`
+   - **funct3**: `010`
+   - **imm[4:0]**: `00100` (lower 5 bits of 4)
+   - **imm[11:5]**: `0000000` (upper 7 bits of 4)
+   - **rs1**: `00001` (r1)
+   - **rs2**: `00011` (r3)
+   - **Instruction**: `0000000 00011 00001 010 00100 0100011`
+   - **Hex**: `0x00312023`
+
+9. **SRL r16, r11, r2** (R-Type)
+   - **Opcode**: `0110011`
+   - **funct3**: `101`
+   - **funct7**: `0000000`
+   - **rs1**: `01011` (r11)
+   - **rs2**: `00010` (r2)
+   - **rd**: `10000` (r16)
+   - **Instruction**: `0000000 00010 01011 101 10000 0110011`
+   - **Hex**: `0x0025A133`
+
+10. **BNE r0, r1, 20** (B-Type)
+    - **Opcode**: `1100011`
+    - **funct3**: `001`
+    - **imm[4:0]**: `10100` (lower 5 bits of 20)
+    - **imm[11:5]**: `000000` (upper 7 bits of 20)
+    - **rs1**: `00001` (r1)
+    - **rs2**: `00000` (r0)
+    - **Instruction**: `000000 00000 00001 001 10100 1100011`
+    - **Hex**: `0x0000A163`
+
+11. **BEQ r0, r0, 15** (B-Type)
+    - **Opcode**: `1100011`
+    - **funct3**: `000`
+    - **imm[4:0]**: `01111` (lower 5 bits of 15)
+    - **imm[11:5]**: `000000` (upper 7 bits of 15)
+    - **rs1**: `00000` (r0)
+    - **rs2**: `00000` (r0)
+    - **Instruction**: `000000 00000 00000 000 01111 1100011`
+
 
 ---
 
