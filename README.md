@@ -349,15 +349,15 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
     - **Instruction**: `000000000010 01011 010 01101 0000011`
     - **Hex**: `0x00258603`
 
- 13.SLL r15, r11, r2 (R-Type)
-   - **opcode**: `0110011` (7 bits)
-   - **rd** (r15): `01111` (5 bits)
-   - **funct3**: `001` (3 bits)
-   - **rs1** (r11): `01011` (5 bits)
-   - **rs2** (r2): `00010` (5 bits)
-   - **funct7**: `0000000` (7 bits)
-   - **Instruction**: `0000000 00010 01011 001 01111 0110011`
-   - **Hex**: `0x00258a33`
+ 13. **SLL r15, r11, r2** (R-Type)
+    - **opcode**: `0110011` (7 bits)
+    - **rd** (r15): `01111` (5 bits)
+    - **funct3**: `001` (3 bits)
+    - **rs1** (r11): `01011` (5 bits)
+    - **rs2** (r2): `00010` (5 bits)
+    - **funct7**: `0000000` (7 bits)
+    - **Instruction**: `0000000 00010 01011 001 01111 0110011`
+    - **Hex**: `0x00258a33`
 
 
 
