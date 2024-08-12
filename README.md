@@ -407,5 +407,5 @@ This document provides an overview of the different instruction formats in the R
 We will be using gtkwave to analyse the waveforms
 
 
-
+A difference in waveforms can be observed for both set of instructions
 </details>
