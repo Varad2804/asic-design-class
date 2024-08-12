@@ -277,7 +277,26 @@ Below are the specific 32-bit encodings for a set of given RISC-V instructions, 
 
 5. **BEQ r1, r0, 20 (B-Type)**
     - **Format:** opcode | imm[12] | imm[10:5] | rs2 | rs1 | funct3 | imm[4:1] | imm[11]
-    - **
+    - **Encoding:**
+      - **opcode:** 1100011 (7 bits)
+      - **imm[12]:** 0 (1 bit)
+      - **imm[10:5]:** 000010 (6 bits)
+      - **rs2 (r0):** 00000 (5 bits)
+      - **rs1 (r1):** 00001 (5 bits)
+      - **funct3:** 000 (3 bits)
+      - **imm[4:1]:** 0100 (4 bits)
+      - **imm[11]:** 0 (1 bit)
+    - **32-bit Binary:** 0000000 00000 00001 000 0100 1100011
+    - **Hexadecimal:** 0x00400063
+
+6. **LUI r2, 0x12345 (U-Type)**
+    - **Format:** opcode | rd | imm[31:12]
+    - **Encoding:**
+      - **opcode:** 0110111 (7 bits)
+      - **rd (r2):** 00010 (5 bits)
+      - **imm[31:12]:** 00010010001101000101 (20 bits)
+    - **32-bit Binary:** 00010010001101000101 00010 0110111
+    - **Hexadecimal:** 0x12345037
 
 ---
 
