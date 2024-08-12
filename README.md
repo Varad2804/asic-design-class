@@ -386,4 +386,22 @@ This document provides an overview of the different instruction formats in the R
 # Task-4: AIM : To execute assembly instructions using a given verilog code for a riscV processor and compare the waveform with Hardcoded instructions.
 <details>
    There is some variations in the ISA followed by RISCV and the hardcoded ISA for the below given instrucions. The differences are shown in the table below :
+      # RISC-V ISA vs. Hardcoded ISA
+
+| Operation         | Standard RISC-V ISA (Hexadecimal) | Hardcoded ISA (Hexadecimal) |
+|-------------------|-----------------------------------|-----------------------------|
+| ADD r5, r6, r7    | 0x007302B3                        | 0x02208300                  |
+| SUB r7, r5, r6    | 0x406283B3                        | 0x02209380                  |
+| AND r6, r5, r7    | 0x0072F333                        | 0x0230A400                  |
+| OR r8, r6, r5     | 0x00536433                        | 0x02513480                  |
+| XOR r8, r5, r4    | 0x0042C433                        | 0x0240C500                  |
+| SLT r10, r2, r4   | 0x00412533                        | 0x02415580                  |
+| ADDI r12, r3, 5   | 0x00518613                        | 0x00520600                  |
+| SW r3, r1, 4      | 0x0030A223                        | 0x00209181                  |
+| SRL r16, r11, r2  | 0x0025D833                        | 0x00271803                  |
+| BNE r0, r1, 20    | 0x00009A63                        | 0x00f00002                  |
+| BEQ r0, r0, 15    | 0x000007E3                        | 0x00210700                  |
+| LW r13, r11, 2    | 0x0025A683                        | 0x00208681                  |
+| SLL r15, r11, r2  | 0x002597B3                        | 0x00208783                  |
+
 </details>
