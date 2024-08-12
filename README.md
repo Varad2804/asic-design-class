@@ -431,19 +431,19 @@ First we start with analysis of our instructions provided for the activity in RI
 
    ![Alt text](image2/image7.png)
 
-7. | ADDI r12, r3, 5   | 0x00518613                        | 0x00520600                  |
+7. | ADDI r12, r3, 5   | 0x00518613                       
 
    ![Alt text](image2/image8.png)
 
-8. | SW r3, r1, 4      | 0x0030A223                        | 0x00209181                  |
+8. | SW r3, r1, 4      | 0x0030A223               
 
    ![Alt text](image2/image9.png)
 
-9. | SRL r16, r11, r2  | 0x0025D833                        | 0x00271803                  |
+9. | SRL r16, r11, r2  | 0x0025D833                     
 
    ![Alt text](image2/image10.png)
 
-10. | BNE r0, r1, 20    | 0x00009A63                        | 0x00f00002                  |
+10. | BNE r0, r1, 20    | 0x00009A63                       
 
    ![Alt text](image2/image11.png)
 
