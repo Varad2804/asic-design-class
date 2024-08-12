@@ -30,7 +30,7 @@ This part demonstrates how to compile and run a simple C program that calculates
 
    ![Alt text](images/image3.png)
 
-## Task 2: Compile Using RISC-V Compiler
+## Compile Using RISC-V Compiler
 This part demonstrates how to compile and run a simple C program that calculates the sum of numbers from 1 to N using RISCV architecture.
 ### Steps:
 
@@ -84,7 +84,7 @@ This part demonstrates how to compile and run a simple C program that calculates
 
 ---
 
-## Task 3: Debug Mode in Spike on RISC-V
+# Task 2: Debug Mode in Spike on RISC-V
 
 ### Steps:
 
