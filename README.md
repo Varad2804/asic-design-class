@@ -405,6 +405,8 @@ This document provides an overview of the different instruction formats in the R
 | SLL r15, r11, r2  | 0x002597B3                        | 0x00208783                  |
 
 We will be using gtkwave to analyse the waveforms
+   ![Alt text](images2/image12.png)
+
 
 
 A difference in waveforms can be observed for both set of instructions
