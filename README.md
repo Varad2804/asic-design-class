@@ -238,7 +238,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
    - **rs2**: `00111` (r7)
    - **rd**: `00101` (r5)
    - **Instruction**: `0000000 00111 00110 000 00101 0110011`
-   - **Hex**: `0x00E302B3`
+   - **Hex**: `0x007302B3`
 
 2. **SUB r7, r5, r6** (R-Type)
    - **Opcode**: `0110011`
@@ -248,7 +248,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
    - **rs2**: `00110` (r6)
    - **rd**: `00111` (r7)
    - **Instruction**: `0100000 00110 00101 000 00111 0110011`
-   - **Hex**: `0x40C283B3`
+   - **Hex**: `0x406283B3`
 
 3. **AND r6, r5, r7** (R-Type)
    - **Opcode**: `0110011`
@@ -258,7 +258,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
    - **rs2**: `00111` (r7)
    - **rd**: `00110` (r6)
    - **Instruction**: `0000000 00111 00101 111 00110 0110011`
-   - **Hex**: `0x00F2C333`
+   - **Hex**: `0x0072F333`
 
 4. **OR r8, r6, r5** (R-Type)
    - **Opcode**: `0110011`
@@ -268,7 +268,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
    - **rs2**: `00101` (r5)
    - **rd**: `01000` (r8)
    - **Instruction**: `0000000 00101 00110 110 01000 0110011`
-   - **Hex**: `0x00B30333`
+   - **Hex**: `0x00536433`
 
 5. **XOR r8, r5, r4** (R-Type)
    - **Opcode**: `0110011`
@@ -278,7 +278,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
    - **rs2**: `00100` (r4)
    - **rd**: `01000` (r8)
    - **Instruction**: `0000000 00100 00101 100 01000 0110011`
-   - **Hex**: `0x008283B3`
+   - **Hex**: `0x0042C433`
 
 6. **SLT r10, r2, r4** (R-Type)
    - **Opcode**: `0110011`
@@ -288,7 +288,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
    - **rs2**: `00100` (r4)
    - **rd**: `01010` (r10)
    - **Instruction**: `0000000 00100 00010 010 01010 0110011`
-   - **Hex**: `0x00411333`
+   - **Hex**: `0x00412533`
 
 7. **ADDI r12, r3, 5** (I-Type)
    - **Opcode**: `0010011`
@@ -297,7 +297,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
    - **rs1**: `00011` (r3)
    - **rd**: `01100` (r12)
    - **Instruction**: `000000000101 00011 000 01100 0010011`
-   - **Hex**: `0x00518193`
+   - **Hex**: `0x00518613`
 
 8. **SW r3, r1, 4** (S-Type)
    - **Opcode**: `0100011`
@@ -307,7 +307,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
    - **rs1**: `00001` (r1)
    - **rs2**: `00011` (r3)
    - **Instruction**: `0000000 00011 00001 010 00100 0100011`
-   - **Hex**: `0x00312023`
+   - **Hex**: `0x0030A223`
 
 9. **SRL r16, r11, r2** (R-Type)
    - **Opcode**: `0110011`
@@ -317,7 +317,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
    - **rs2**: `00010` (r2)
    - **rd**: `10000` (r16)
    - **Instruction**: `0000000 00010 01011 101 10000 0110011`
-   - **Hex**: `0x0025A133`
+   - **Hex**: `0x0025D833`
 
 10. **BNE r0, r1, 20** (B-Type)
     - **Opcode**: `1100011`
@@ -327,7 +327,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
     - **rs1**: `00001` (r1)
     - **rs2**: `00000` (r0)
     - **Instruction**: `000000 00000 00001 001 10100 1100011`
-    - **Hex**: `0x0000A163`
+    - **Hex**: `0x00009A63`
 
 11. **BEQ r0, r0, 15** (B-Type)
     - **Opcode**: `1100011`
@@ -346,7 +346,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
     - **rs1** (r11): `01011` (5 bits)
     - **imm**: `000000000010` (12 bits)
     - **Instruction**: `000000000010 01011 010 01101 0000011`
-    - **Hex**: `0x00258603`
+    - **Hex**: `0x0025A683`
 
  13. **SLL r15, r11, r2** (R-Type)
  - **opcode**: `0110011` (7 bits)
@@ -356,7 +356,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
  - **rs2** (r2): `00010` (5 bits)
  - **funct7**: `0000000` (7 bits)
  - **Instruction**: `0000000 00010 01011 001 01111 0110011`
- - **Hex**: `0x00258a33`
+ - **Hex**: `0x002597B3`
 
 
 
