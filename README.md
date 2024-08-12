@@ -2,8 +2,8 @@
 
 This is Varad Bharadiya (IMT2021532). Course - Physical Design of ASICs (VLS508)
 
-
 # Task 1: Compiling the C Code with GCC and RISCV
+<details>
 
 
 This part demonstrates how to compile and run a simple C program that calculates the sum of numbers from 1 to N using GCC
@@ -83,7 +83,7 @@ This part demonstrates how to compile and run a simple C program that calculates
    - Re-run the command to get the number of instructions, and you'll see that fewer instructions are needed to execute the program with `Ofast` optimization.
    
    ![Alt text](images/image8.png)
-
+</details>
 ---
 
 # Task 2: Debug Mode in Spike on RISC-V
