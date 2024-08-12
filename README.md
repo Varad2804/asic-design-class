@@ -326,7 +326,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
     - **imm[11:5]**: `000000` (upper 7 bits of 20)
     - **rs1**: `00001` (r1)
     - **rs2**: `00000` (r0)
-    - **Instruction**: `000000 00000 00001 001 10100 1100011`
+    - **Instruction**: `0000000 00000 00001 001 10100 1100011`
     - **Hex**: `0x00009A63`
 
 11. **BEQ r0, r0, 15** (B-Type)
@@ -336,7 +336,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
     - **imm[11:5]**: `000000` (upper 7 bits of 15)
     - **rs1**: `00000` (r0)
     - **rs2**: `00000` (r0)
-    - **Instruction**: `000000 00000 00000 000 01111 1100011`
+    - **Instruction**: `0000000 00000 00000 000 01111 1100011`
     - **Hex** : `0x000007E3`
    
 12. **LW r13, r11, 2** (I-Type)
@@ -372,8 +372,8 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
 | ADDI r12, r3, 5   | I    | 000000000101 00011 000 01100 0010011          | 0x00518613   |
 | SW r3, r1, 4      | S    | 0000000 00011 00001 010 00100 0100011         | 0x0030A223   |
 | SRL r16, r11, r2  | R    | 0000000 00010 01011 101 10000 0110011         | 0x0025D833   |
-| BNE r0, r1, 20    | B    | 000000 00000 00001 001 10100 1100011          | 0x00009A63   |
-| BEQ r0, r0, 15    | B    | 000000 00000 00000 000 01111 1100011          | 0x000007E3   |
+| BNE r0, r1, 20    | B    | 0000000 00000 00001 001 10100 1100011         | 0x00009A63   |
+| BEQ r0, r0, 15    | B    | 0000000 00000 00000 000 01111 1100011         | 0x000007E3   |
 | LW r13, r11, 2    | I    | 000000000010 01011 010 01101 0000011          | 0x0025A683   |
 | SLL r15, r11, r2  | R    | 0000000 00010 01011 001 01111 0110011         | 0x002597B3   |
 
