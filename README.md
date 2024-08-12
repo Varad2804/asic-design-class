@@ -83,8 +83,8 @@ This part demonstrates how to compile and run a simple C program that calculates
    - Re-run the command to get the number of instructions, and you'll see that fewer instructions are needed to execute the program with `Ofast` optimization.
    
    ![Alt text](images/image8.png)
-</details>
 ---
+</details>
 
 # Task 2: Debug Mode in Spike on RISC-V
 <details>
@@ -128,10 +128,10 @@ This part demonstrates how to use the debug mode in RISCV.(using SPIKE)
    - To verify:
 
    ![Alt text](images/image12.png)
-
+---
 </details>
 
----
+
 # Task-3:RISC-V Instruction Formats
 <details>
 
