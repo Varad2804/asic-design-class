@@ -441,11 +441,11 @@ First we start with analysis of our instructions provided for the activity in RI
 
 9. | SRL r16, r11, r2  | 0x0025D833                     
 
-   ![Alt text](image2/image10.png)
+   ![Alt text](image2/image11.png)
 
 10. | BNE r0, r1, 20    | 0x00009A63                       
 
-   ![Alt text](image2/image11.png)
+   ![Alt text](image2/image10.png)
 
 We now analyse the gtkwaves for hardcoded ISA
 
