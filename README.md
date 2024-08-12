@@ -3,7 +3,9 @@
 This is Varad Bharadiya (IMT2021532). Course - Physical Design of ASICs (VLS508)
 
 
-# Task 1: Compiling the C Code with GCC
+# Task 1: Compiling the C Code with GCC and RISCV
+
+
 This part demonstrates how to compile and run a simple C program that calculates the sum of numbers from 1 to N using GCC
 ### Steps:
 
