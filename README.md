@@ -87,6 +87,7 @@ This part demonstrates how to compile and run a simple C program that calculates
 ---
 
 # Task 2: Debug Mode in Spike on RISC-V
+<details>
 
 ### Steps:
 
@@ -126,6 +127,7 @@ This part demonstrates how to compile and run a simple C program that calculates
 
    ![Alt text](images/image12.png)
 
+</details>
 
 ---
 # RISC-V Instruction Formats
