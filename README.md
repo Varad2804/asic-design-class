@@ -359,8 +359,31 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
  - **Hex**: `0x002597B3`
 
 
+Below are the 32-bit instruction encodings for the given assembly instructions:
+
+| Instruction       | Type | 32-bit Instruction                            | Hexadecimal  |
+|-------------------|------|-----------------------------------------------|--------------|
+| ADD r5, r6, r7    | R    | 0000000 00111 00110 000 00101 0110011         | 0x007302B3   |
+| SUB r7, r5, r6    | R    | 0100000 00110 00101 000 00111 0110011         | 0x406283B3   |
+| AND r6, r5, r7    | R    | 0000000 00111 00101 111 00110 0110011         | 0x0072F333   |
+| OR r8, r6, r5     | R    | 0000000 00101 00110 110 01000 0110011         | 0x00536433   |
+| XOR r8, r5, r4    | R    | 0000000 00100 00101 100 01000 0110011         | 0x0042C433   |
+| SLT r10, r2, r4   | R    | 0000000 00100 00010 010 01010 0110011         | 0x00412533   |
+| ADDI r12, r3, 5   | I    | 000000000101 00011 000 01100 0010011          | 0x00518613   |
+| SW r3, r1, 4      | S    | 0000000 00011 00001 010 00100 0100011         | 0x0030A223   |
+| SRL r16, r11, r2  | R    | 0000000 00010 01011 101 10000 0110011         | 0x0025D833   |
+| BNE r0, r1, 20    | B    | 000000 00000 00001 001 10100 1100011          | 0x00009A63   |
+| BEQ r0, r0, 15    | B    | 000000 00000 00000 000 01111 1100011          | 0x000007E3   |
+| LW r13, r11, 2    | I    | 000000000010 01011 010 01101 0000011          | 0x0025A683   |
+| SLL r15, r11, r2  | R    | 0000000 00010 01011 001 01111 0110011         | 0x002597B3   |
+
 
 ---
 
 This document provides an overview of the different instruction formats in the RISC-V architecture, explaining how each format is structured and used in various operations.
+</details>
+
+# Task-4: AIM : To execute assembly instructions using a given verilog code for a riscV processor and compare the waveform with Hardcoded instructions.
+<details>
+   There is some variations in the ISA followed by RISCV and the hardcoded ISA for the below given instrucions. The differences are shown in the table below :
 </details>
