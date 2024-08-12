@@ -88,6 +88,8 @@ This part demonstrates how to compile and run a simple C program that calculates
 
 # Task 2: Debug Mode in Spike on RISC-V
 <details>
+This part demonstrates how to use the debug mode in RISCV.(using SPIKE)
+
 
 ### Steps:
 
