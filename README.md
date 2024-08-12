@@ -220,6 +220,6 @@ J-type instructions are used for jump operations, altering the program control f
 - **Examples:** `JAL`
 
 ---
-</details>
 
 This document provides an overview of the different instruction formats in the RISC-V architecture, explaining how each format is structured and used in various operations.
+</details>
