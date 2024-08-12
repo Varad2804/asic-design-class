@@ -449,6 +449,24 @@ First we start with analysis of our instructions provided for the activity in RI
 
 We now analyse the gtkwaves for hardcoded ISA
 
+   ![Alt text](image2/image12.png)
+
+   ![Alt text](image2/image13.png)
+
+   ![Alt text](image2/image14.png)
+
+   ![Alt text](image2/image15.png)
+
+   ![Alt text](image2/image16.png)
+
+   ![Alt text](image2/image17.png)
+
+   ![Alt text](image2/image18.png)
+
+   ![Alt text](image2/image19.png)
+
+   ![Alt text](image2/image20.png)
+
 
 A difference in waveforms can be observed for both set of instructions
 </details>
