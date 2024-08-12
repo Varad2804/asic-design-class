@@ -339,7 +339,7 @@ Below are the 32-bit instruction encodings for the given assembly instructions:
     - **rs1**: `00000` (r0)
     - **rs2**: `00000` (r0)
     - **Instruction**: `000000 00000 00000 000 01111 1100011`
-    - **Hex** : `0x01400863`
+    - **Hex** : `0x000007E3`
    
 12. **LW r13, r11, 2** (I-Type)
     - **opcode**: `0000011` (7 bits)
