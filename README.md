@@ -477,6 +477,44 @@ A difference in waveforms can be observed for both set of instructions
 ## Application Name- Fibonacci Sequence Generator.
 
 ``` bash
+#include <stdio.h>
+
+// Function to print Fibonacci sequence
+int main() {
+    int terms;
+
+    // Ask the user for the number of terms
+    printf("Enter the number of terms in the Fibonacci sequence: ");
+    scanf("%d", &terms);
+	
+    long long int first = 0, second = 1, next;
+
+    // Check if the number of terms is valid
+    if (terms <= 0) {
+        printf("Number of terms must be a positive integer.\n");
+        return 0;
+    }
+
+    // Print the Fibonacci sequence
+    printf("Fibonacci Sequence:\n");
+    for (int i = 0; i < terms; i++) {
+        if (i == 0) {
+            printf("%lld ", first);
+            continue;
+        }
+        if (i == 1) {
+            printf("%lld ", second);
+            continue;
+        }
+        next = first + second;
+        first = second;
+        second = next;
+        printf("%lld ", next);
+    }
+    printf("\n");
+
+    return 0;
+}
 
 ```
 Compiling the Application using GCC compiler:
