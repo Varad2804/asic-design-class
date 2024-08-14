@@ -472,9 +472,11 @@ A difference in waveforms can be observed for both set of instructions
 </details>
 
 # Task-5: Compiling C application using GCC and RISC-V
+<details>
 Application Name- Fibonacci Sequence Generator.
 
-```bash
+``` bash
+
 #include <stdio.h>
 
 // Function to print Fibonacci sequence
@@ -519,6 +521,13 @@ int main() {
 
     return 0;
 }
-
 ```
+Compiling the Application using GCC compiler:
+   ![Alt text](images3/image1.png)
 
+Compiling using RISC-V Compiler:
+   ![Alt text](images3/image2.png)
+
+
+
+</details>
