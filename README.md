@@ -473,7 +473,8 @@ A difference in waveforms can be observed for both set of instructions
 
 # Task-5: Compiling C application using GCC and RISC-V
 <details>
-Application Name- Fibonacci Sequence Generator.
+
+## Application Name- Fibonacci Sequence Generator.
 
 ``` bash
 
