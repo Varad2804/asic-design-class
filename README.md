@@ -524,10 +524,12 @@ int main() {
 }
 ```
 Compiling the Application using GCC compiler:
+
    ![Alt text](images3/image1.png)
 
 Compiling using RISC-V Compiler:
+
    ![Alt text](images3/image2.png)
 
-We have infered that the output is same in both the cases.
+**Conclusion**:We have infered that the output is same in both the cases.
 </details>
