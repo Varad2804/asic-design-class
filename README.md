@@ -479,8 +479,6 @@ A difference in waveforms can be observed for both set of instructions
 ``` bash
 
 #include <stdio.h>
-
-// Function to print Fibonacci sequence
 void printFibonacci(int terms) {
     // Declare variables
     long long int first = 0, second = 1, next;
