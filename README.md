@@ -526,4 +526,12 @@ Compiling using RISC-V Compiler:
    ![Alt text](images3/image2.png)
 
 **Conclusion**:We have infered that the output is same in both the cases.
+
+Also adding the screenshots of creating dumpfile
+
+   ![Alt text](images3/image4.png)
+
+   ![Alt text](images3/image3.png)
+
+
 </details>
