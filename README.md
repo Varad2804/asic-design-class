@@ -470,3 +470,55 @@ We now analyse the gtkwaves for hardcoded ISA
 
 A difference in waveforms can be observed for both set of instructions
 </details>
+
+# Task-5: Compiling C application using GCC and RISC-V
+Application Name- Fibonacci Sequence Generator.
+
+```bash
+#include <stdio.h>
+
+// Function to print Fibonacci sequence
+void printFibonacci(int terms) {
+    // Declare variables
+    long long int first = 0, second = 1, next;
+
+    // Check if the number of terms is valid
+    if (terms <= 0) {
+        printf("Number of terms must be a positive integer.\n");
+        return;
+    }
+
+    // Print the Fibonacci sequence
+    printf("Fibonacci Sequence:\n");
+    for (int i = 0; i < terms; i++) {
+        if (i == 0) {
+            printf("%lld ", first);
+            continue;
+        }
+        if (i == 1) {
+            printf("%lld ", second);
+            continue;
+        }
+        next = first + second;
+        first = second;
+        second = next;
+        printf("%lld ", next);
+    }
+    printf("\n");
+}
+
+int main() {
+    int terms;
+
+    // Ask the user for the number of terms
+    printf("Enter the number of terms in the Fibonacci sequence: ");
+    scanf("%d", &terms);
+
+    // Print the Fibonacci sequence
+    printFibonacci(terms);
+
+    return 0;
+}
+
+```
+
