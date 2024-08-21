@@ -544,25 +544,25 @@ The variour parts of the code are shown below :
 
 The generated visual is as shown below:
 
-   ![Alt text](images4/2.png)
+   ![Alt text](images4/24.png)
 
 Here is the log image:
 
-   ![Alt text](images4/3.png)
+   ![Alt text](images4/2.png)
 
 The signals include the named clock clock: "clk_var":
 
-   ![Alt text](images4/4.png)
+   ![Alt text](images4/3.png)
 
 The code segments are shown below:
+
+   ![Alt text](images4/4.png)
 
    ![Alt text](images4/5.png)
 
    ![Alt text](images4/6.png)
 
    ![Alt text](images4/7.png)
-
-   ![Alt text](images4/8.png)
 
 
 </details>
