@@ -564,5 +564,30 @@ The code segments are shown below:
 
    ![Alt text](images4/7.png)
 
+   ![Alt text](images4/8.png)
+
+   ![Alt text](images4/9.png)
+
+   ![Alt text](images4/10.png)
+
+   ![Alt text](images4/11.png)
+
+   ![Alt text](images4/12.png)
+
+   ![Alt text](images4/13.png)
+
+   ![Alt text](images4/14.png)
+
+   ![Alt text](images4/15.png)
+
+   ![Alt text](images4/16.png)
+
+   ![Alt text](images4/17.png)
+
+   ![Alt text](images4/18.png)
+
+   ![Alt text](images4/19.png)
+
+
 
 </details>
