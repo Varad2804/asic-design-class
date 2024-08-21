@@ -540,29 +540,29 @@ Also adding the screenshots of creating dumpfile
 <details>
 The variour parts of the code are shown below :
 
-   ![Alt text](images3/image3.png)
+   ![Alt text](images4/1.png)
 
 The generated visual is as shown below:
 
-   ![Alt text](images3/image3.png)
+   ![Alt text](images3/2.png)
 
 Here is the log image:
 
-   ![Alt text](images3/image3.png)
+   ![Alt text](images3/3.png)
 
 The signals include the named clock clock: "clk_var":
 
-   ![Alt text](images3/image3.png)
+   ![Alt text](images3/4.png)
 
 The code segments are shown below:
 
-   ![Alt text](images3/image3.png)
+   ![Alt text](images3/5.png)
 
-   ![Alt text](images3/image3.png)
+   ![Alt text](images3/6.png)
 
-   ![Alt text](images3/image3.png)
+   ![Alt text](images3/7.png)
 
-   ![Alt text](images3/image3.png)
+   ![Alt text](images3/8.png)
 
 
 </details>
