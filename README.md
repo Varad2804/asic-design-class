@@ -535,9 +535,3 @@ Also adding the screenshots of creating dumpfile
 
 
 </details>
-### Task-6: To design a Basic Risc-V processor core using TL-Verilog on Makerchip, MYTH Day 3_5 activities
-<details>
-The diagram of the basic processor is as below:
- 
-	
-</details>
