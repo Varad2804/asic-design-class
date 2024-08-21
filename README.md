@@ -586,7 +586,17 @@ The code segments are shown below:
 
    ![Alt text](images4/18.png)
 
+We now have screen shots for xreg14 where we store the value at each steps.
+
    ![Alt text](images4/19.png)
+
+   ![Alt text](images4/20.png)
+
+   ![Alt text](images4/21.png)
+
+   ![Alt text](images4/22.png)
+
+   ![Alt text](images4/23.png)
 
 
 
