@@ -535,3 +535,34 @@ Also adding the screenshots of creating dumpfile
 
 
 </details>
+
+# Task-6: To design a Baisc Risc-V processor core using TL-Verilog on Makerchip, MYTH Day 3_5 activities
+<details>
+The variour parts of the code are shown below :
+
+   ![Alt text](images3/image3.png)
+
+The generated visual is as shown below:
+
+   ![Alt text](images3/image3.png)
+
+Here is the log image:
+
+   ![Alt text](images3/image3.png)
+
+The signals include the named clock clock: "clk_var":
+
+   ![Alt text](images3/image3.png)
+
+The code segments are shown below:
+
+   ![Alt text](images3/image3.png)
+
+   ![Alt text](images3/image3.png)
+
+   ![Alt text](images3/image3.png)
+
+   ![Alt text](images3/image3.png)
+
+
+</details>
