@@ -654,10 +654,30 @@ This project involves designing a RISC-V processor using TL-Verilog in the Maker
    ```bash
    gtkwave pre_synth_sim.vcd
    ```
+Here is the gtkwave:
+
+   ![Alt text](images5/image1.png)
+
 
 ## Comparison of Output Waveforms
 
 After running the above steps, you can compare the output waveforms obtained from GTKWave with those from the Makerchip IDE. The comparison will help validate the accuracy and performance of the RISC-V design.
+
+From the MakerChip:
+
+   ![Alt text](images4/19.png)
+   
+   ![Alt text](images4/20.png)
+   
+   ![Alt text](images4/21.png)
+   
+   ![Alt text](images4/22.png)
+   
+   ![Alt text](images4/23.png)
+
+From the GtkWave:
+
+   ![Alt text](images5/image1.png)
 
 ## Conclusion
 
