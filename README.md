@@ -603,7 +603,7 @@ We now have screen shots for xreg14 where we store the value at each steps.
 </details>
 
 
-# RISC-V Pre-Synthesis Simulation: A Comparative Study using Icarus Verilog (Iverilog), GTKWave, and Makerchip
+# Task-7: RISC-V Pre-Synthesis Simulation: A Comparative Study using Icarus Verilog (Iverilog), GTKWave, and Makerchip
 <details>
 	
 ## Overview
