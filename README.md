@@ -656,7 +656,7 @@ This project involves designing a RISC-V processor using TL-Verilog in the Maker
    ```
 Here is the gtkwave:
 
-   ![Alt text](image5/image1.jpg)
+   ![Alt text](image5/img1.jpg)
 
 
 ## Comparison of Output Waveforms
@@ -677,7 +677,7 @@ From the MakerChip:
 
 From the GtkWave:
 
-   ![Alt text](image5/image1.jpg)
+   ![Alt text](image5/img1.jpg)
 
 ## Conclusion
 
