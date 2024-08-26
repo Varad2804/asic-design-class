@@ -605,40 +605,12 @@ We now have screen shots for xreg14 where we store the value at each steps.
 
 # RISC-V Pre-Synthesis Simulation: A Comparative Study using Icarus Verilog (Iverilog), GTKWave, and Makerchip
 <details>
+	
 ## Overview
 
 This project involves designing a RISC-V processor using TL-Verilog in the Makerchip IDE and converting it to Verilog using the Sandpiper-SaaS compiler for implementation on an FPGA. Pre-synthesis simulations are then performed using the GTKWave simulator. This README outlines the step-by-step process for running these simulations and compares the output waveforms.
 
-## Prerequisites
 
-Before starting, ensure that the following packages are installed:
-
-```bash
-sudo apt install make python python3 python3-pip git iverilog gtkwave docker.io
-sudo chmod 666 /var/run/docker.sock
-pip3 install pyyaml click sandpiper-saas
-```
-
-## Project Setup
-
-1. **Clone the Repository:**
-
-   Clone the `VSDBabySoC` repository in your home directory:
-
-   ```bash
-   cd ~
-   git clone https://github.com/manili/VSDBabySoC.git
-   ```
-
-2. **Replace the TL-Verilog File:**
-
-   Replace the `.tlv` file in the `VSDBabySoC/src/module` folder with your custom RISC-V `.tlv` file that you want to convert into Verilog.
-
-3. **Change Directory to `VSDBabySoC`:**
-
-   ```bash
-   cd VSDBabySoC
-   ```
 
 ## Conversion and Simulation Steps
 
