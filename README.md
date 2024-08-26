@@ -601,3 +601,93 @@ We now have screen shots for xreg14 where we store the value at each steps.
 
 
 </details>
+
+
+# RISC-V Pre-Synthesis Simulation: A Comparative Study using Icarus Verilog (Iverilog), GTKWave, and Makerchip
+<details>
+## Overview
+
+This project involves designing a RISC-V processor using TL-Verilog in the Makerchip IDE and converting it to Verilog using the Sandpiper-SaaS compiler for implementation on an FPGA. Pre-synthesis simulations are then performed using the GTKWave simulator. This README outlines the step-by-step process for running these simulations and compares the output waveforms.
+
+## Prerequisites
+
+Before starting, ensure that the following packages are installed:
+
+```bash
+sudo apt install make python python3 python3-pip git iverilog gtkwave docker.io
+sudo chmod 666 /var/run/docker.sock
+pip3 install pyyaml click sandpiper-saas
+```
+
+## Project Setup
+
+1. **Clone the Repository:**
+
+   Clone the `VSDBabySoC` repository in your home directory:
+
+   ```bash
+   cd ~
+   git clone https://github.com/manili/VSDBabySoC.git
+   ```
+
+2. **Replace the TL-Verilog File:**
+
+   Replace the `.tlv` file in the `VSDBabySoC/src/module` folder with your custom RISC-V `.tlv` file that you want to convert into Verilog.
+
+3. **Change Directory to `VSDBabySoC`:**
+
+   ```bash
+   cd VSDBabySoC
+   ```
+
+## Conversion and Simulation Steps
+
+1. **Translate TL-Verilog to Verilog:**
+
+   Use the Sandpiper-SaaS compiler to convert the `.tlv` definition of RISC-V into a `.v` Verilog file:
+
+   ```bash
+   sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
+   ```
+
+2. **Create the `pre_synth_sim.vcd` File:**
+
+   Generate the pre-synthesis simulation file:
+
+   ```bash
+   make pre_synth_sim
+   ```
+
+3. **Compile and Simulate the RISC-V Design:**
+
+   Compile and simulate the RISC-V design using Iverilog:
+
+   ```bash
+   iverilog -o output/pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module -
+   ```
+
+4. **Run the Simulation:**
+
+   Change the working directory to `output` and execute the simulation:
+
+   ```bash
+   cd output
+   ./pre_synth_sim.out
+   ```
+
+5. **View the Simulation Output in GTKWave:**
+
+   Open the `.vcd` simulation file through the GTKWave simulation tool:
+
+   ```bash
+   gtkwave pre_synth_sim.vcd
+   ```
+
+## Comparison of Output Waveforms
+
+After running the above steps, you can compare the output waveforms obtained from GTKWave with those from the Makerchip IDE. The comparison will help validate the accuracy and performance of the RISC-V design.
+
+## Conclusion
+
+This project demonstrates the process of designing, converting, and simulating a RISC-V processor using TL-Verilog, Verilog, Iverilog, and GTKWave. The comparison of output waveforms across different tools ensures the correctness of the design before FPGA implementation.
+</details>
