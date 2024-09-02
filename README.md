@@ -687,7 +687,7 @@ This project demonstrates the process of designing, converting, and simulating a
 
 # Task-8 Few Installations and BabySoc Simulation
 <details>
-	In this task we had to install verilog, gtkwave, yosys and opensta. OpenSTA was installed using the githublink given.
+	In this task we had to install verilog, gtkwave, yosys and opensta and BabySoc Simulation. OpenSTA was installed using the GitHub link given.
 	
 The screenshots for the others are given below:
 	
