@@ -679,7 +679,29 @@ From the GtkWave:
 
    ![Alt text](image5/img1.png)
 
+
 ## Conclusion
 
 This project demonstrates the process of designing, converting, and simulating a RISC-V processor using TL-Verilog, Verilog, Iverilog, and GTKWave. The comparison of output waveforms across different tools ensures the correctness of the design before FPGA implementation.
+</details>
+
+# Task-8 Few Installations and BabySoc Simulation
+<details>
+	In this task we had to install verilog, gtkwave, yosys and opensta. OpenSTA was installed using the githublink given.
+	
+The screenshots for the others are given below:
+	
+   ![Alt text](image6/1.png)
+
+   ![Alt text](image6/2.png)
+
+Running the BabySoc on the RiscV_CPU.v file (sum of numbers):
+   
+   ![Alt text](image6/3.png)
+
+Waveforms:
+   
+   ![Alt text](image6/4.png)
+
+
 </details>
