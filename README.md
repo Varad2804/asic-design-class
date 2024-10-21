@@ -894,6 +894,42 @@ Synchronus Set:
 
 Multiplication by 2: This tutorial, we get to know that specific multiplier hardware is not required for multiplication of a number by 2. It can simply be achieved by concatenating the number itself with a zero in the LSB.
 
+```bash
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog mult_2.v
+4. synth -top mul2
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. show
+7. write_verilog -noattr mul2_net.v
+8. gvim mul2_net.v
+```
+
+   ![Alt text](image21/Part2_40.png)
+
+   ![Alt text](image21/Part2_41.png)
+
+
+Multiplication by 9: This tutorial, we get to know that specific multiplier hardware is not required for multiplication of a number by 9. It can simply be achieved by concatenating the number with itself
+
+```bash
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog mult_9.v
+4. synth -top mult9
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. show
+7. write_verilog -noattr mul9_net.v
+8. gvim mul9_net.v
+```
+   ![Alt text](image21/Part2_42.png)
+
+   ![Alt text](image21/Part2_43.png)
+
+   ![Alt text](image21/Part2_44.png)
+
+   ![Alt text](image21/Part2_45.png)
+
 </details>
 </details>
 
