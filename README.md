@@ -817,10 +817,10 @@ Use of Module Level Synthesis: This method is preferred when multiple instances 
 
 ```bash
 1. yosys
-2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 3. read_verilog multiple_modules.v
 4. synth -top sub_module1
-5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+5. abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 6. show
 ```
 
@@ -896,10 +896,10 @@ Multiplication by 2: This tutorial, we get to know that specific multiplier hard
 
 ```bash
 1. yosys
-2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 3. read_verilog mult_2.v
 4. synth -top mul2
-5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+5. abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 6. show
 7. write_verilog -noattr mul2_net.v
 8. gvim mul2_net.v
@@ -917,7 +917,7 @@ Multiplication by 9: This tutorial, we get to know that specific multiplier hard
 2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 3. read_verilog mult_9.v
 4. synth -top mult9
-5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+5. abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 6. show
 7. write_verilog -noattr mul9_net.v
 8. gvim mul9_net.v
@@ -931,5 +931,118 @@ Multiplication by 9: This tutorial, we get to know that specific multiplier hard
    ![Alt text](image21/Part2_45.png)
 
 </details>
+
+## Day-3
+<details>
+	
+Optimization of Various Designs
+Design infers 2 input AND Gate:
+
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog opt_check.v
+4. synth -top opt_check
+5. abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+6.Removes unused or redundant logic in the design and purges any dangling wires or gates.
+
+   ![Alt text](image21/Part2_46.png)
+
+   ![Alt text](image21/Part2_47.png)
+
+   ![Alt text](image21/Part2_48.png)
+
+Design infers 2 input OR Gate: 
+
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog opt_check2.v
+4. synth -top opt_check2
+5. abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+   ![Alt text](image21/Part2_49.png)
+
+   ![Alt text](image21/Part2_50.png)
+
+   ![Alt text](image21/Part2_51.png)
+
+Design infers 3 input AND Gate: 
+
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog opt_check3.v
+4. synth -top opt_check3
+5. abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+   ![Alt text](image21/Part2_52.png)
+
+   ![Alt text](image21/Part2_53.png)
+
+   ![Alt text](image21/Part2_54.png)
+
+Design infers 2 input XNOR Gate (3 input Boolean Logic) :
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog opt_check4.v
+4. synth -top opt_check4
+5. abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+
+   ![Alt text](image21/Part2_55.png)
+
+   ![Alt text](image21/Part2_56.png)
+
+   ![Alt text](image21/Part2_57.png)
+
+Multiple Module Optimization-1 :
+```bash
+
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog multiple_module_opt.v
+4. synth -top multiple_module_opt
+5. abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+
+   ![Alt text](image21/Part2_58.png)
+
+   ![Alt text](image21/Part2_59.png)
+
+   ![Alt text](image21/Part2_60.png)
+
+Multiple Module Optimization-2:
+```bash
+
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog multiple_module_opt2.v
+4. synth -top multiple_module_opt2
+5. abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+
+D-Flipflop Constant 1 with Asynchronous Reset (active low) :
+```bash
+iverilog dff_const1.v tb_dff_const1.v
+./a.out
+gtkwave tb_dff_const1.vcd
+```
 </details>
+</details>
+
 
