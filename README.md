@@ -708,7 +708,8 @@ Waveforms:
 
 # Task -9 RTL design using Verilog with SKY130 Technology
 <details>
-## Initial Set-up
+
+ ## Initial Set-up
 
 <details>
 
@@ -728,7 +729,18 @@ ls
 We have the image for the same:
 	![Alt text](image21/Part2_1.png)
  We also can see the files in verilog_files directory:
- 	![Alt text](image21/Part2_1.png)
+ 	![Alt text](image21/Part2_2.png)
+</details>
+
+## Day-1
+
+<details>
+Introduction to iverilog and GTKWave: 
+This tutorial involved learning about how to simulate the design and testbench for a 2x1 multiplexer, using iverilog, and displaying the waveform on GTKWave
+
+ 	![Alt text](image21/Part2_2.png)
+
+	
 </details>
 </details>
 
