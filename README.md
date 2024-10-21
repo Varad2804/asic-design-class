@@ -783,5 +783,42 @@ Next we run the `synth -top` command to synthesise the design to yosys based sta
 
 	
 </details>
+
+  ## Day-2
+  
+<details>
+	
+Yosys Synthesis for Multiple Modules: This tutorial involved the synthesis of a design file that has more than one module.
+
+We follow similar steps again for the multiple_modules.v file
+
+We get the following design for the schematic:
+
+   ![Alt text](image21/Part2_13.png)
+
+   ![Alt text](image21/Part2_14.png)
+
+   ![Alt text](image21/Part2_15.png)
+
+   ![Alt text](image21/Part2_16.png)
+
+   ![Alt text](image21/Part2_17.png)
+
+   With flatten netlist:
+
+   ![Alt text](image21/Part2_18.png)
+
+   schematic for the same when flatten
+
+   ![Alt text](image21/Part2_19.png)
+
+
+
+   
+   
+
+
+
+</details>
 </details>
 
