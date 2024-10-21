@@ -949,11 +949,11 @@ Design infers 2 input AND Gate:
 ```
 6.Removes unused or redundant logic in the design and purges any dangling wires or gates.
 
-   ![Alt text](image21/Part2_46.png)
-
-   ![Alt text](image21/Part2_47.png)
-
    ![Alt text](image21/Part2_48.png)
+
+   ![Alt text](image21/Part2_49.png)
+
+   ![Alt text](image21/Part2_50.png)
 
 Design infers 2 input OR Gate: 
 
@@ -966,11 +966,11 @@ Design infers 2 input OR Gate:
 6. opt_clean -purge
 7. show
 ```
-   ![Alt text](image21/Part2_49.png)
-
-   ![Alt text](image21/Part2_50.png)
-
    ![Alt text](image21/Part2_51.png)
+
+   ![Alt text](image21/Part2_52.png)
+
+   ![Alt text](image21/Part2_53.png)
 
 Design infers 3 input AND Gate: 
 
@@ -983,11 +983,11 @@ Design infers 3 input AND Gate:
 6. opt_clean -purge
 7. show
 ```
-   ![Alt text](image21/Part2_52.png)
-
-   ![Alt text](image21/Part2_53.png)
-
    ![Alt text](image21/Part2_54.png)
+
+   ![Alt text](image21/Part2_55.png)
+
+   ![Alt text](image21/Part2_56.png)
 
 Design infers 2 input XNOR Gate (3 input Boolean Logic) :
 ```bash
@@ -1000,11 +1000,11 @@ Design infers 2 input XNOR Gate (3 input Boolean Logic) :
 7. show
 ```
 
-   ![Alt text](image21/Part2_55.png)
-
-   ![Alt text](image21/Part2_56.png)
-
    ![Alt text](image21/Part2_57.png)
+
+   ![Alt text](image21/Part2_58.png)
+
+   ![Alt text](image21/Part2_59.png)
 
 Multiple Module Optimization-1 :
 ```bash
@@ -1018,11 +1018,11 @@ Multiple Module Optimization-1 :
 7. show
 ```
 
-   ![Alt text](image21/Part2_58.png)
-
-   ![Alt text](image21/Part2_59.png)
-
    ![Alt text](image21/Part2_60.png)
+
+   ![Alt text](image21/Part2_61.png)
+
+   ![Alt text](image21/Part2_62.png)
 
 Multiple Module Optimization-2:
 ```bash
