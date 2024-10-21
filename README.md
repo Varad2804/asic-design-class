@@ -892,6 +892,7 @@ Synchronus Set:
 
    ![Alt text](image21/Part2_39.png)
 
+Multiplication by 2: This tutorial, we get to know that specific multiplier hardware is not required for multiplication of a number by 2. It can simply be achieved by concatenating the number itself with a zero in the LSB.
 
 </details>
 </details>
