@@ -843,25 +843,24 @@ This figure shows asynchronus set
 
 This figure shows that dff is posedge.
 
-   ![Alt text](image21/Part2_22.png)
+   ![Alt text](image21/Part2_23.png)
 
 3. Synchronous Reset.
 
 The figure below shows the part when synchronous reset is into action.
 
-   ![Alt text](image21/Part2_23.png)
+   ![Alt text](image21/Part2_24.png)
 
 This figure shows that dff is posedge.
 
-   ![Alt text](image21/Part2_24.png)
-
    ![Alt text](image21/Part2_25.png)
-
-   A screenshot demonstrating that all the above 3 files were run on my system.
 
    ![Alt text](image21/Part2_26.png)
 
+   A screenshot demonstrating that all the above 3 files were run on my system.
+
    ![Alt text](image21/Part2_27.png)
+
    
 </details>
 </details>
