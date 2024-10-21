@@ -705,3 +705,21 @@ Waveforms:
 
 
 </details>
+
+# Task -9 RTL design using Verilog with SKY130 Technology
+<details>
+	# Initial Set-up
+	<details>
+		``
+		sudo -i
+		sudo apt-get install git
+		ls
+		cd /home/gourab
+		mkdir VLSI
+		cd VLSI
+		git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+		cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
+		ls
+		``
+	</details>
+</details>
