@@ -747,21 +747,37 @@ This tutorial involved learning about how to simulate the design and testbench f
 Introduction to Yosys: 
 This tutorial involved the use of Yosys for synthesising the design we created in Verilog, viewing its netlists and the cells that are generated for the purpose of creating the circuit. The following commands are used:
 
+Open Yosys and read the standard cell library file and then run the `read_verilog` command to run the good_mux.v file:
+
    ![Alt text](image21/Part2_4.png)
+
+Next we run the `synth -top` command to synthesise the design to yosys based standard cells:
 
    ![Alt text](image21/Part2_5.png)
 
+   We can see some info at the end after synthesis.
+
    ![Alt text](image21/Part2_6.png)
+
+   Now, we run `abc` command to use the sky130 standard cells with optimised design.
 
    ![Alt text](image21/Part2_7.png)
 
+   run `show` command to see the schematic and how the design maps it to the standard cells of sky130 tech.
+
    ![Alt text](image21/Part2_8.png)
+
+   Now, we get the netlist using the `write_verilog` command
 
    ![Alt text](image21/Part2_9.png)
 
-   With -noattr flag. To make netlist more readable:
-
    ![Alt text](image21/Part2_10.png)
+
+   With -noattr flag. To make netlist more readable:
+   
+   ![Alt text](image21/Part2_12.png)
+
+   
 
 
 
