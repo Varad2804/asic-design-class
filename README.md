@@ -1164,6 +1164,115 @@ Counter Optimization 2:
    ![Alt text](image21/Part2_78.png)
 
 </details>
+
+
+## Day-4
+<details>
+
+```bash
+iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+
+
+   ![Alt text](image21/Part2_79.png)
+
+   ![Alt text](image21/Part2_80.png)
+
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog ternary_operator_mux.v
+4. synth -top ternary_operator_mux
+5. abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. write_verilog -noattr ternary_operator_mux_net.v
+8. show
+```
+   ![Alt text](image21/Part2_81.png)
+
+```bash
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+GATE LEVEL SYNTHESIS for the Ternary Operator MUX.
+
+Design of a Bad 2x1 MUX:
+
+```bash
+iverilog bad_mux.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+   ![Alt text](image21/Part2_82.png)
+   ![Alt text](image21/Part2_83.png)
+
+The waveform shows that the output y changes only when the select line changes, ignoring changes in i0 and i1, indicating a faulty MUX design. Proper MUX behavior should reflect changes in i0 and i1 in the output y.
+
+
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog bad_mux.v
+4. synth -top bad_mux
+5. abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. write_verilog -noattr bad_mux_net.v
+8. show
+```
+
+   ![Alt text](image21/Part2_84.png)
+
+```bash
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+   ![Alt text](image21/Part2_85.png)
+   ![Alt text](image21/Part2_86.png)
+
+
+GATE LEVEL SYNTHESIS for the Bad MUX.
+
+
+
+Blocking Caveat:
+```bash
+iverilog blocking_caveat.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+   ![Alt text](image21/Part2_87.png)
+   ![Alt text](image21/Part2_88.png)
+
+
+The waveform shows that when A and B are zero, the OR gate output (X) and the AND gate output (D) should both be zero. However, due to the blocking statement, the AND gate input of X retains the previous value of A|B (one), causing a discrepancy in the output.
+
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog blocking_caveat.v
+4. synth -top blocking_caveat
+5. abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. write_verilog -noattr blocking_caveat_net.v
+8. show
+```
+   ![Alt text](image21/Part2_89.png)
+   
+```bash
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+   ![Alt text](image21/Part2_90.png)
+
+   ![Alt text](image21/Part2_91.png)
+
+GATE LEVEL SYNTHESIS for the Blocking Caveat.
+</details>
 </details>
 
 
