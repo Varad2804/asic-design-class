@@ -1206,9 +1206,10 @@ iverilog bad_mux.v tb_bad_mux.v
 ./a.out
 gtkwave tb_bad_mux.vcd
 ```
-   ![Alt text](image21/Part2_82.png)
    ![Alt text](image21/Part2_83.png)
 
+   ![Alt text](image21/Part2_84.png)
+   
 The waveform shows that the output y changes only when the select line changes, ignoring changes in i0 and i1, indicating a faulty MUX design. Proper MUX behavior should reflect changes in i0 and i1 in the output y.
 
 
@@ -1223,14 +1224,14 @@ The waveform shows that the output y changes only when the select line changes, 
 8. show
 ```
 
-   ![Alt text](image21/Part2_84.png)
+   ![Alt text](image21/Part2_85.png)
 
 ```bash
 iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux.v tb_bad_mux.v
 ./a.out
 gtkwave tb_bad_mux.vcd
 ```
-   ![Alt text](image21/Part2_85.png)
+
    ![Alt text](image21/Part2_86.png)
 
 
