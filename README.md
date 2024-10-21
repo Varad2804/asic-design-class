@@ -708,7 +708,12 @@ Waveforms:
 
 # Task -9 RTL design using Verilog with SKY130 Technology
 <details>
-	<Initial Set-up>
-		
-	</Initial Set-up>
+Initial Set-up
+<details>
+	The following Commands were to be executed for initial setup:
+	```bash
+		ubfurbgurwbgyugfbgbju
+	```
 </details>
+</details>
+
