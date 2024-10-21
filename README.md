@@ -1192,12 +1192,6 @@ gtkwave tb_ternary_operator_mux.vcd
 ```
    ![Alt text](image21/Part2_81.png)
 
-```bash
-iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux.v tb_ternary_operator_mux.v
-./a.out
-gtkwave tb_ternary_operator_mux.vcd
-```
-GATE LEVEL SYNTHESIS for the Ternary Operator MUX.
 
 Design of a Bad 2x1 MUX:
 
