@@ -1087,8 +1087,8 @@ D-Flipflop Constant 3 with Asynchronous Reset (active low)
 ```bash
 1. yosys
 2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-3. read_verilog dff_const2.v
-4. synth -top dff_const2
+3. read_verilog dff_const3.v
+4. synth -top dff_const3
 5. dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 7. show
 ```
@@ -1099,6 +1099,69 @@ D-Flipflop Constant 3 with Asynchronous Reset (active low)
 This module defines a D flip-flop, for a positive edge of reset, q is set to 1 and q1 is set to 0. On each clock cycle, q1 is set to 1, and q is updated with the value of q1.
 
 When synthesized, the design will result in a flip-flop where q becomes 1 after the first clock cycle post-reset and stays 1 afterward.
+
+D-Flipflop Constant 4 with Asynchronous Reset (active high) :
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_const4.v
+4. synth -top dff_const4
+5. dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+
+   ![Alt text](image21/Part2_71.png)
+
+   ![Alt text](image21/Part2_72.png)
+
+This module defines a D flip-flop that sets both q and q1 to 1 on a positive edge of reset. On each clock cycle, q1 remains 1, and q is updated with the value of q1 (which is always 1).
+
+When synthesized, the design will result in a flip-flop where q is always 1, regardless of the reset or clock state.
+
+
+D-Flipflop Constant 5 with Asynchronous Reset :
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_const5.v
+4. synth -top dff_const5
+5. dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+   ![Alt text](image21/Part2_73.png)
+
+   ![Alt text](image21/Part2_74.png)
+
+This module defines a D flip-flop that resets both q and q1 to 0 on a positive edge of reset. On each clock cycle, it sets q1 to 1 and then updates q with the value of q1 (which will always be 1 after the first cycle).
+
+When synthesized, the design will result in a flip-flop where q is always 1 after the first clock cycle post-reset.
+
+Counter Optimization 1: 
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog counter_opt.v
+4. synth -top counter_opt
+5. dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+   ![Alt text](image21/Part2_75.png)
+
+   ![Alt text](image21/Part2_76.png)
+   
+Counter Optimization 2:
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog counter_opt2.v
+4. synth -top counter_opt2
+5. dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+
+   ![Alt text](image21/Part2_77.png)
+
+   ![Alt text](image21/Part2_78.png)
 
 </details>
 </details>
