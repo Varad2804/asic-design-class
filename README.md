@@ -710,7 +710,7 @@ Waveforms:
 <details>
 	# Initial Set-up
 	<details>
-		``
+		``` bash
 		sudo -i
 		sudo apt-get install git
 		ls
