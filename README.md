@@ -1042,6 +1042,64 @@ iverilog dff_const1.v tb_dff_const1.v
 ./a.out
 gtkwave tb_dff_const1.vcd
 ```
+
+   ![Alt text](image21/Part2_63.png)
+
+
+From the waveform, it can be observed that the Q output is always high when reset is zero, and reset doesn't depend on clock edge.
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_const1.v
+4. synth -top dff_const1
+5. dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+   ![Alt text](image21/Part2_64.png)
+
+   ![Alt text](image21/Part2_65.png)
+
+D-Flipflop Constant 2 with Asynchronous Reset (active high) :
+
+```bash
+iverilog dff_const2.v tb_dff_const2.v
+./a.out
+gtkwave tb_dff_const2.vcd
+```
+   ![Alt text](image21/Part2_66.png)
+
+From the waveform, it can be observed that the Q output is always high irrespective of reset.
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_const2.v
+4. synth -top dff_const2
+5. dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+   ![Alt text](image21/Part2_67.png)
+
+   ![Alt text](image21/Part2_68.png)
+
+
+D-Flipflop Constant 3 with Asynchronous Reset (active low)
+
+```bash
+1. yosys
+2. read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_const2.v
+4. synth -top dff_const2
+5. dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+   ![Alt text](image21/Part2_69.png)
+
+   ![Alt text](image21/Part2_70.png)
+   
+This module defines a D flip-flop, for a positive edge of reset, q is set to 1 and q1 is set to 0. On each clock cycle, q1 is set to 1, and q is updated with the value of q1.
+
+When synthesized, the design will result in a flip-flop where q becomes 1 after the first clock cycle post-reset and stays 1 afterward.
+
 </details>
 </details>
 
