@@ -855,13 +855,44 @@ This figure shows that dff is posedge.
 
    ![Alt text](image21/Part2_25.png)
 
+A screenshot demonstrating that all the above 3 files were run on my system.
+
    ![Alt text](image21/Part2_26.png)
 
-   A screenshot demonstrating that all the above 3 files were run on my system.
+Now we shall perform synthesis.
+
+Asynchronous Reset:
 
    ![Alt text](image21/Part2_27.png)
 
-   
+   ![Alt text](image21/Part2_28.png)
+
+   ![Alt text](image21/Part2_29.png)
+
+   ![Alt text](image21/Part2_30.png)
+
+   ![Alt text](image21/Part2_31.png)
+
+   ![Alt text](image21/Part2_32.png)
+
+Asynchronus Set:
+
+   ![Alt text](image21/Part2_33.png)
+
+   ![Alt text](image21/Part2_34.png)
+
+   ![Alt text](image21/Part2_35.png)
+
+Synchronus Set:
+   ![Alt text](image21/Part2_36.png)
+
+   ![Alt text](image21/Part2_37.png)
+
+   ![Alt text](image21/Part2_38.png)
+
+   ![Alt text](image21/Part2_39.png)
+
+
 </details>
 </details>
 
