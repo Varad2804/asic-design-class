@@ -813,12 +813,56 @@ We get the following design for the schematic:
    ![Alt text](image21/Part2_19.png)
 
 
+Use of Module Level Synthesis: This method is preferred when multiple instances of same module are used. The synthesis is carried out once and is replicate multiple times, and the multiple instances of the same module are stitched together in the top module. This method is helpful when making use of divide and conquer algorithm 
 
+```bash
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog multiple_modules.v
+4. synth -top sub_module1
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. show
+```
+
+Simulation of D-Flipflop using Iverilog and GTKWave: Performed simulations for 3 types of D-Flipflops - Asynchronous Reset, Asynchronous Set and Synchronous Reset. 
+
+1. Asynchronous Reset
+
+This figure shows asynchronous reset.
+   ![Alt text](image21/Part2_20.png)
+
+This figure shows that the dff is posedge.
+
+   ![Alt text](image21/Part2_21.png)
+
+2. Asynchronous Set
+
+This figure shows asynchronus set
+
+   ![Alt text](image21/Part2_22.png)
+
+This figure shows that dff is posedge.
+
+   ![Alt text](image21/Part2_22.png)
+
+3. Synchronous Reset.
+
+The figure below shows the part when synchronous reset is into action.
+
+   ![Alt text](image21/Part2_23.png)
+
+This figure shows that dff is posedge.
+
+   ![Alt text](image21/Part2_24.png)
+
+   ![Alt text](image21/Part2_25.png)
+
+   A screenshot demonstrating that all the above 3 files were run on my system.
+
+   ![Alt text](image21/Part2_26.png)
+
+   ![Alt text](image21/Part2_27.png)
    
-   
-
-
-
 </details>
 </details>
 
