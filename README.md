@@ -708,12 +708,25 @@ Waveforms:
 
 # Task -9 RTL design using Verilog with SKY130 Technology
 <details>
-Initial Set-up
+## Initial Set-up
+
 <details>
-	The following Commands were to be executed for initial setup:
-	```bash
-		ubfurbgurwbgyugfbgbju
-	```
+
+### The following Commands were to be executed for initial setup:
+
+```bash
+sudo -i
+sudo apt-get install git
+ls
+cd /home/gourab
+mkdir VLSI
+cd VLSI
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
+ls
+```
+We have the image for the same:
+	![Alt text](image21/Part2_1.png)
 </details>
 </details>
 
