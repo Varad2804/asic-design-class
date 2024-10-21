@@ -738,7 +738,32 @@ We have the image for the same:
 Introduction to iverilog and GTKWave: 
 This tutorial involved learning about how to simulate the design and testbench for a 2x1 multiplexer, using iverilog, and displaying the waveform on GTKWave
 
- 	![Alt text](image21/Part2_2.png)
+   ![Alt text](image21/Part2_2.png)
+   
+
+   ![Alt text](image21/Part2_3.png)
+   
+
+Introduction to Yosys: 
+This tutorial involved the use of Yosys for synthesising the design we created in Verilog, viewing its netlists and the cells that are generated for the purpose of creating the circuit. The following commands are used:
+
+   ![Alt text](image21/Part2_4.png)
+
+   ![Alt text](image21/Part2_5.png)
+
+   ![Alt text](image21/Part2_6.png)
+
+   ![Alt text](image21/Part2_7.png)
+
+   ![Alt text](image21/Part2_8.png)
+
+   ![Alt text](image21/Part2_9.png)
+
+   With -noattr flag. To make netlist more readable:
+
+   ![Alt text](image21/Part2_10.png)
+
+
 
 	
 </details>
