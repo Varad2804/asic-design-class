@@ -1309,7 +1309,7 @@ iverilog ../../my_lib/verilog_model/primitives.v ../../my_lib/verilog_model/sky1
 ./a.out
 gtkwave dump.vcd
 ```
-   ![Alt text](image22/12.png)
+   ![Alt text](image22/13.png)
 
    ![Alt text](image22/11.png)
 
