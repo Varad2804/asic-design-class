@@ -1270,4 +1270,42 @@ GATE LEVEL SYNTHESIS for the Blocking Caveat.
 </details>
 </details>
 
+# Task-10 RISCV- Synthesis
+<details>
+Copy the src folder from your BabySoC folder to your sky130RTLDesignAndSynthesisWorkshop folder in your VLSI folder from previous lab.
+
+Now go the following Directory:
+```bash
+cd /home/Varad/VLSI/sky130RTLDesignAndSynthesisWorkshop/src/module
+```
+Synthesis:
+
+```bash
+1. yosys       
+2. read_liberty -lib /home/Varad/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog clk_gate.v
+4. read_verilog rvmyth.v
+5. synth -top rvmyth
+6. abc -liberty /home/Varad/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. write_verilog -noattr rvmyth_net.v
+```
+   ![Alt text](image22/1.png)
+
+   ![Alt text](image22/2.png)
+
+   ![Alt text](image22/3.png)
+
+Now to observe the output waveform of synthesised RISC-V
+
+```bash
+iverilog ../../my_lib/verilog_model/primitives.v ../../my_lib/verilog_model/sky130_fd_sc_hd.v rvmyth.v testbench.v vsdbabysoc.v avsddac.v avsdpll.v clk_gate.v
+./a.out
+gtkwave dump.vcd
+```
+   ![Alt text](image22/5.png)
+
+   ![Alt text](image22/6.png)
+
+
+</details>
 
