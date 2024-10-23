@@ -1301,6 +1301,9 @@ Synthesis:
 
    ![Alt text](image22/7.png)
 
+   ![image](https://github.com/user-attachments/assets/dedbcd6a-5745-459c-9bcc-2328cecc7919)
+
+
 
 Now to observe the output waveform of synthesised RISC-V
 
