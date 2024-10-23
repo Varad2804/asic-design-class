@@ -1297,6 +1297,11 @@ Synthesis:
 
    ![Alt text](image22/3.png)
 
+   ![Alt text](image22/4.png)
+
+   ![Alt text](image22/7.png)
+
+
 Now to observe the output waveform of synthesised RISC-V
 
 ```bash
@@ -1304,9 +1309,19 @@ iverilog ../../my_lib/verilog_model/primitives.v ../../my_lib/verilog_model/sky1
 ./a.out
 gtkwave dump.vcd
 ```
-   ![Alt text](image22/5.png)
+   ![Alt text](image22/12.png)
 
-   ![Alt text](image22/6.png)
+   ![Alt text](image22/11.png)
+
+   ![Alt text](image22/10.png)
+
+Observations from Babysoc RTL simulation:
+
+   ![Alt text](image22/8.png)
+   
+   ![Alt text](image22/9.png)
+   
+   ![Alt text](image22/10.png)
 
 
 </details>
