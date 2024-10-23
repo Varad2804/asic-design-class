@@ -1272,9 +1272,11 @@ GATE LEVEL SYNTHESIS for the Blocking Caveat.
 
 # Task-10 RISCV- Synthesis
 <details>
-Copy the src folder from your BabySoC folder to your sky130RTLDesignAndSynthesisWorkshop folder in your VLSI folder from previous lab.
+
+Copy the `src` folder from your `BabySoC` folder to your `sky130RTLDesignAndSynthesisWorkshop` folder in your `VLSI` folder from previous lab.
 
 Now go the following Directory:
+
 ```bash
 cd /home/Varad/VLSI/sky130RTLDesignAndSynthesisWorkshop/src/module
 ```
