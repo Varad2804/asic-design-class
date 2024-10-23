@@ -1324,7 +1324,6 @@ Observations from Babysoc RTL simulation:
    
    ![Alt text](image22/9.png)
    
-   ![Alt text](image22/10.png)
 
 
 </details>
