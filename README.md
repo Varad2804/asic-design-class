@@ -1352,9 +1352,32 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
 
    ![Alt text](OpenSTA/sta3.png)
 
+Here is the setup report:
    ![Alt text](OpenSTA/sta4.png)
-
+   
+Here is the hold report:
    ![Alt text](OpenSTA/sta5.png)
 
-   
+The below is the sdc file (to set the constraints on the design):
+
+```bash
+set PERIOD 10.85
+
+set_units -time ns
+create_clock [get_pins {pll/CLK}] -name clk -period $PERIOD
+set_clock_uncertainty -setup  [expr $PERIOD * 0.05] [get_clocks clk]
+set_input_delay -min 0 [get_ports ENb_CP] -clock [get_clocks "clk"]
+set_input_delay -min 0 [get_ports ENb_VCO] -clock [get_clocks "clk"]
+set_input_delay -min 0 [get_ports REF] -clock [get_clocks "clk"]
+set_input_delay -min 0 [get_ports VCO_IN] -clock [get_clocks "clk"]
+set_input_delay -min 0 [get_ports VREFH] -clock [get_clocks "clk"]
+set_clock_transition [expr $PERIOD * 0.05] [get_clocks clk]
+set_clock_uncertainty -hold [expr $PERIOD * 0.08] [get_clocks clk]
+set_input_transition [expr $PERIOD * 0.08] [get_ports ENb_CP]
+set_input_transition [expr $PERIOD * 0.08] [get_ports ENb_VCO]
+set_input_transition [expr $PERIOD * 0.08] [get_ports REF]
+set_input_transition [expr $PERIOD * 0.08] [get_ports VCO_IN]
+set_input_transition [expr $PERIOD * 0.08] [get_ports VREFH]
+```
+
 </details>
