@@ -1331,5 +1331,30 @@ Observations from Babysoc RTL simulation:
 
  # Task-11 Timing Analysis of VSDBabySOC using OpenSTA
 <details>
-	
+
+The following commands were run to get the max-min report of the VSDbabysoc design:
+``` bash
+read_liberty -min ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -min ./lib/avsdpll.lib
+read_liberty -min ./lib/avsddac.lib
+read_liberty -max ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -max ./lib/avsdpll.lib
+read_liberty -max ./lib/avsddac.lib
+read_verilog ../output/synth/vsdbabysoc.synth.v
+link_design vsdbabysoc
+read_sdc ./sdc/vsdbabysoc_synthesis.sdc
+report_checks -path_delay min_max -format full_clock_expanded -digits 4
+```
+
+   ![Alt text](OpenSTA/sta1.png)
+
+   ![Alt text](OpenSTA/sta2.png)
+
+   ![Alt text](OpenSTA/sta3.png)
+
+   ![Alt text](OpenSTA/sta4.png)
+
+   ![Alt text](OpenSTA/sta5.png)
+
+   
 </details>
