@@ -1328,3 +1328,8 @@ Observations from Babysoc RTL simulation:
 
 </details>
 
+
+ # Task-11 Timing Analysis of VSDBabySOC using OpenSTA
+<details>
+	
+</details>
