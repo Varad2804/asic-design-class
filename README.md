@@ -1352,10 +1352,12 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
 
    ![Alt text](OpenSTA/sta3.png)
 
-Here is the setup report:
+Here is the hold report:
+
    ![Alt text](OpenSTA/sta4.png)
    
-Here is the hold report:
+Here is the setup report:
+
    ![Alt text](OpenSTA/sta5.png)
 
 The below is the sdc file (to set the constraints on the design):
