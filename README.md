@@ -1394,12 +1394,19 @@ Store all the `lib` files in a folder named `timing_libs`. Go to `VSDBabySoC/src
 
 ![image](https://github.com/user-attachments/assets/861b6f0c-c9ce-4208-87bb-b0f0c97e7ea8)
 
+Screenshot of the command to be executed in terminal after opening sta:
 
+![image](https://github.com/user-attachments/assets/58fe3332-071e-43a2-87bb-f895b1684c51)
+
+
+Min values (Worst hold Slack):
 
 ![image](https://github.com/user-attachments/assets/f3038b25-f567-4a09-9710-b0da6ea2cde9)
 
+Man values (Worst Negative Slack):
 ![image](https://github.com/user-attachments/assets/e0ae187e-e5fa-408b-a361-5895c085ddad)
 
+Table summarising all values for different lib files:
 
 ![image](https://github.com/user-attachments/assets/64497b4b-09e9-4aa5-ba3a-b612ff408bde)
 
