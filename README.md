@@ -1383,3 +1383,25 @@ set_input_transition [expr $PERIOD * 0.08] [get_ports VREFH]
 ```
 
 </details>
+
+# Task-12 Post Synthesis Static Timing Analysis using OpenSTA for all the sky130 lib files
+<details>
+Snapshot of constraints file:
+	
+![image](https://github.com/user-attachments/assets/e610f497-4b48-4bf7-a145-8c5277fa3302)
+
+Store all the `lib` files in a folder named `timing_libs`. Go to `VSDBabySoC/src` and create a file `sta_across_pvt.tcl`. The below consists of the contents of the tickle file:
+
+![image](https://github.com/user-attachments/assets/861b6f0c-c9ce-4208-87bb-b0f0c97e7ea8)
+
+
+
+![image](https://github.com/user-attachments/assets/f3038b25-f567-4a09-9710-b0da6ea2cde9)
+
+![image](https://github.com/user-attachments/assets/e0ae187e-e5fa-408b-a361-5895c085ddad)
+
+
+![image](https://github.com/user-attachments/assets/64497b4b-09e9-4aa5-ba3a-b612ff408bde)
+
+ 
+</details>
