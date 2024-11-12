@@ -1595,6 +1595,7 @@ package require openlane 0.9
 prep -design picorv32a
 run_synthesis
 ```
+   ![Alt text](Day1/1.png)
 
 
 To view the netlist:
@@ -1604,12 +1605,17 @@ cd designs/picorv32a/runs/09-11_06-33/results/synthesis/
 gedit picorv32a.synthesis.v
 ```
 
+   ![Alt text](Day1/2.png)
+
+
 To view the yosys report:
 ```bash
 cd ../..
 cd reports/synthesis
 gedit 1-yosys_4.stat.rpt
 ```
+
+   ![Alt text](Day1/3.png)
 
 Report:
 
@@ -1697,6 +1703,8 @@ Flop ratio = Number of D Flip flops = 1613  = 0.1084
  Percentage  of  DFF′s = 0.108429685 ∗ 100 = 10.84296854   % 
 
 ```
+
+   ![Alt text](Day1/4.png)
 
  </details>
 
