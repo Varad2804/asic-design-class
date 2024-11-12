@@ -1698,8 +1698,12 @@ Flop ratio = Number of D Flip flops = 1613  = 0.1084
 
 ```
 
- P e r c e n t a g e   o f   D F F ′ s = 0.108429685 ∗ 100 = 10.84296854   % 
  </details>
 
+
+# Day-2
+<details>
+	
+</details>
  
 </details>
