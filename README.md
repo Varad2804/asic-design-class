@@ -1711,7 +1711,191 @@ Flop ratio = Number of D Flip flops = 1613  = 0.1084
 
 # Day-2
 <details>
-	
+
+**Utilization Factor and Aspect Ratio** : In IC floor planning, utilization factor and aspect ratio are key parameters. The utilization factor is the ratio of the area occupied by the netlist to the total core area. While a perfect utilization of 1 (100%) is ideal, practical designs target a factor of 0.5 to 0.6 to allow space for buffer zones, routing channels, and future adjustments. The aspect ratio, defined as height divided by width, indicates the chip’s shape; an aspect ratio of 1 denotes a square, while other values result in a rectangular layout. The aspect ratio is chosen based on functional, packaging, and manufacturing needs.
+
+```bash
+Utilisation Factor =  Area occupied by netlist
+                     __________________________
+                         Total area of core
+                         
+
+Aspect Ratio =  Height
+               ________
+                Width
+```
+
+**Pre-placed cells** : Pre-placed cells are essential functional blocks, such as memory, custom processors, and analog circuits, positioned manually in fixed locations. These blocks are crucial for the chip’s performance and remain fixed during placement and routing to preserve their functionality and layout integrity.
+
+**Decoupling Capacitors** : Decoupling capacitors are placed near logic circuits to stabilize power supply voltages during transient events. Acting as local energy reserves, they help reduce voltage fluctuations, crosstalk, and electromagnetic interference (EMI), ensuring reliable power delivery to sensitive circuits.
+
+**Power Planning**: A robust power planning strategy includes creating a power and ground mesh to distribute VDD and VSS evenly across the chip. This setup ensures stable power delivery, minimizes voltage drops, and improves overall efficiency. Multiple power and ground points reduce the risk of instability and voltage drop issues, supporting the design’s power needs effectively.
+
+**Pin Placement**: Pin placement (I/O planning) is crucial for functionality and reliability. Strategic pin assignment minimizes signal degradation, preserves data integrity, and helps manage heat dissipation. Proper positioning of power and ground pins supports thermal management and enhances signal strength, contributing to overall system stability and manufacturability.
+
+**Floorplaning using OpenLANE:**
+
+Run the following commands:
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane
+docker
+```
+
+```bash
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+run_synthesis
+run_floorplan
+```
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/09-11_07-10/results/floorplan
+gedit picorv32a.floorplan.def
+```
+
+Now, run the below commands in a new terminal:
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/09-11_07-10/results/floorplan
+gedit picorv32a.floorplan.def
+```
+
+According to floorplan definition:
+
+```bash
+1000 Unit Distance = 1 Micron
+Die width in unit distance = 660685−0 = 660685
+Die height in unit distance = 671405−0 = 671405
+Distance in microns = Value in Unit Distance/1000
+​Die width in microns = 660685/1000 = 660.685 Microns
+Die height in microns = 671405/1000 = 671.405 Microns
+Area of die in microns = 660.685 × 671.405 = 443587.212425 Square Microns
+To view the floorplan in magic. Open a new terminal and run the below commands:
+```
+
+Now we can view the floorpan using magic. This can be done in new terminal:
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/floorplan/
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
+
+![image](https://github.com/user-attachments/assets/37aa0dea-049a-4d9a-8726-6863760bf188)
+
+![image](https://github.com/user-attachments/assets/5de361a9-089d-47c7-b155-8ae49476029a)
+
+
+Command to run placement:
+
+```bash
+run_placement
+```
+
+![image](https://github.com/user-attachments/assets/ddc3b3fa-727d-4f07-8215-37eacbe44a11)
+
+![image](https://github.com/user-attachments/assets/76552053-846b-45df-a882-2a14d1d73e23)
+
+
+# **Cell Design and Characterization Flow**
+
+## **Introduction to Library and Cell Design**
+
+A **library** is a collection of standard cells used in digital designs, each with different sizes, functionalities, and threshold voltages. These cells serve as building blocks in an integrated circuit (IC). The cell design flow follows a sequence of steps to create, characterize, and validate cells for use in ASIC or FPGA designs.
+
+### **Inputs for Cell Design Flow:**
+
+- **PDKs (Process Design Kits):** Contains essential design data such as:
+  - DRC (Design Rule Check) & LVS (Layout Versus Schematic) files
+  - SPICE models for analog simulations
+  - Libraries containing predefined cells and user-defined specifications
+- **Design Steps:**
+  1. **Circuit Design:** The initial design of the circuit based on functionality.
+  2. **Layout Design:** The art of arranging the components on the silicon wafer. It involves:
+     - **Euler’s Path** (to ensure no shorts or open circuits)
+     - **Stick Diagram** (a graphical representation of the layout)
+  3. **Extraction of Parasitics:** Identifying the parasitic components like resistance and capacitance that can affect the circuit's performance.
+  4. **Characterization:** Involves measuring timing, noise, and power consumption characteristics of the cell.
+
+### **Outputs:**
+- **CDL** (Circuit Description Language) files for circuit representation
+- **LEF** (Library Exchange Format) for physical layout
+- **GDSII** for chip layout and fabrication
+- **Extracted SPICE netlist** (.cir) files
+- **Characterization Results:** Timing, noise, and power data in `.lib` files
+
+---
+
+## **Standard Cell Characterization Flow**
+
+A typical standard cell characterization flow involves several steps that are essential to characterize the behavior and performance of cells in a digital design. The general flow includes the following stages:
+
+1. **Read in the Models and Technology Files:** These files contain process technology data required for cell characterization.
+2. **Read Extracted SPICE Netlist:** The netlist describes the electrical connectivity of the cell.
+3. **Recognize Behavior of the Cells:** The behavior of each cell is analyzed based on its functionality.
+4. **Read the Subcircuits:** Extract the subcircuits from the netlist.
+5. **Attach Power Sources:** Supply necessary power to the cells during characterization.
+6. **Apply Stimulus to the Characterization Setup:** A voltage or current stimulus is applied to simulate the circuit.
+7. **Provide Necessary Output Capacitance Loads:** Set up load conditions for the output of the cell to simulate real-world conditions.
+8. **Provide Necessary Simulation Commands:** These define the simulation conditions, such as transient analysis and timing measurements.
+
+Once all these steps are defined, the configuration file is fed into a **characterization software** called **GUNA**, which generates the **timing**, **power**, and **noise** models. The results are saved as `.lib` files and classified into:
+- **Timing Characterization**
+- **Power Characterization**
+- **Noise Characterization**
+
+---
+
+## **Timing Parameters**
+
+In digital designs, several timing parameters are defined to assess the performance of standard cells. The following parameters are commonly used:
+
+| **Timing Parameter**         | **Value**          |
+|------------------------------|--------------------|
+| `slew_low_rise_thr`           | 20% value          |
+| `slew_high_rise_thr`          | 80% value          |
+| `slew_low_fall_thr`          | 20% value          |
+| `slew_high_fall_thr`         | 80% value          |
+| `in_rise_thr`                | 50% value          |
+| `in_fall_thr`                | 50% value          |
+| `out_rise_thr`               | 50% value          |
+| `out_fall_thr`               | 50% value          |
+
+### **Propagation Delay**
+
+**Propagation delay** refers to the time it takes for a change in an input signal to propagate through a circuit and cause a corresponding change in the output signal. The time is measured when the input and output signals reach 50% of their final values.
+
+- **Rise Delay:** 
+```bash
+rise_delay = time(out_fall_thr) - time(in_rise_thr)
+```
+
+
+### **Transition Time**
+
+Transition time is the time it takes for a signal to transition between states. It is usually measured from 10% to 90% or 20% to 80% of the signal's voltage levels.
+
+- **Fall Transition Time:**
+```bash
+fall_transition_time = time(slew_high_fall_thr) - time(slew_low_fall_thr)
+```
+
+
+- **Rise Transition Time:**
+```bash
+rise_transition_time = time(slew_high_rise_thr) - time(slew_low_rise_thr)
+```
+
+---
+
+## **Conclusion**
+
+This flow and the techniques described are part of the process used to design, simulate, and validate the behavior of standard cells in digital circuit design. By properly characterizing these cells, engineers can ensure that the cells perform optimally in terms of timing, noise, and power in real-world applications.
+
+The **GUNA software** plays a key role in generating the required .lib files that are used for further optimization and integration into larger ASIC or FPGA designs.
+
+
+
 </details>
  
 </details>
