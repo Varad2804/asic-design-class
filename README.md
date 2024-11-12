@@ -1419,7 +1419,8 @@ Table summarising all values for different lib files:
 ## Day-1
 
  <details>
-	# **Understanding ASIC Design and Flow**
+	
+# **Understanding ASIC Design and Flow**
 
 This document provides an overview of various components involved in the design and implementation of an ASIC (Application-Specific Integrated Circuit), from the chip design process to hardware execution. 
 
@@ -1537,6 +1538,8 @@ This process involves converting the high-level application into machine-readabl
 ---
 
 ## **OpenLane ASIC Flow**
+
+![image](https://github.com/user-attachments/assets/7df7b8b6-2575-4836-81b7-1bbcc04f49d0)
 
 The **OpenLane ASIC Flow** consists of a set of tools and steps to carry out the design and verification of an ASIC.
 
