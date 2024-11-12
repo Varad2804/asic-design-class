@@ -1694,8 +1694,11 @@ Flop ratio = Number of D Flip flops = 1613  = 0.1084
              ______________________   _____
              Total Number of cells    14876
 
+ Percentage  of  DFF′s = 0.108429685 ∗ 100 = 10.84296854   % 
+
 ```
-  
+
+ P e r c e n t a g e   o f   D F F ′ s = 0.108429685 ∗ 100 = 10.84296854   % 
  </details>
 
  
