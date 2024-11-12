@@ -1605,7 +1605,7 @@ cd designs/picorv32a/runs/09-11_06-33/results/synthesis/
 gedit picorv32a.synthesis.v
 ```
 
-   ![Alt text](DAY2/Day12.png)
+   ![Alt text](DAY1/Day12.png)
 
 
 To view the yosys report:
