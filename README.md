@@ -1412,3 +1412,176 @@ Table summarising all values for different lib files:
 
  
 </details>
+
+# Task-13 Advanced Physical Design using OpenLane using Sky130
+<details>
+
+## Day-1
+
+ <details>
+	# **Understanding ASIC Design and Flow**
+
+This document provides an overview of various components involved in the design and implementation of an ASIC (Application-Specific Integrated Circuit), from the chip design process to hardware execution. 
+
+---
+
+## **Key Components of ASIC Design**
+
+### 1. **QFN-48 Package**
+   A **Quad Flat No-leads (QFN) 48** package is a leadless IC package with 48 connection pads around the perimeter. It offers excellent thermal and electrical performance in a compact form, making it ideal for high-density applications.
+
+   ![QFN-48 Package](https://github.com/user-attachments/assets/8fb258e0-28f5-4f4c-95ab-fb1321aa430e)
+
+### 2. **Chip**
+   An **Integrated Circuit (IC)** is a silicon-based device that contains various functional blocks, such as memory, processing units, and I/O, designed for specific applications in electronics.
+
+   ![Chip](https://github.com/user-attachments/assets/bd59a58f-9857-432f-902b-63ed2b6431d6)
+
+### 3. **Pads**
+   **Pads** are small metallic areas on a chip or package used to connect the internal circuitry to external connections, enabling signal transfer to and from the IC.
+
+### 4. **Core**
+   The **core** is the central part of a chip containing the main processing unit and functional logic, optimized for power and performance.
+
+### 5. **Die**
+   The **die** is the section of a silicon wafer that contains an individual IC before it is packaged, housing all active circuits and elements necessary for the chip’s functions.
+
+   ![Die](https://github.com/user-attachments/assets/545bb775-27b3-4c97-879c-702ed430220b)
+
+### 6. **IPs (Intellectual Properties)**
+   **IPs** are pre-designed functional blocks or modules within a chip, such as USB controllers or memory interfaces. These IPs are licensed for reuse across various designs, saving time and cost in development.
+
+---
+
+## **From Software Applications to Hardware Flow**
+
+To run an application on hardware, several steps take place, starting from high-level programming to the final execution on hardware.
+
+### **Software Preparation for Hardware Execution:**
+
+1. **System Software:**
+   - The **Operating System (OS)** breaks down application functions written in high-level languages (e.g., C, C++, Java).
+   
+2. **Compiler:**
+   - The **compiler** converts these high-level functions into architecture-specific low-level instructions.
+
+3. **Assembler:**
+   - The **assembler** translates the low-level instructions into binary machine code, understandable by the hardware.
+
+### **Example: Stopwatch Application**
+For a **stopwatch app** running on a RISC-V core:
+- The OS generates a small function in C.
+- The compiler outputs RISC-V-specific instructions.
+- The assembler converts these into binary code for execution on the chip.
+
+This process involves converting the high-level application into machine-readable binary code, allowing hardware (e.g., a chip) to execute the required functionality.
+
+---
+
+## **Components of ASIC Design**
+
+### 1. **RTL Design**
+   - **RTL (Register Transfer Level)** design describes the functional behavior of the circuit using HDLs (e.g., Verilog, VHDL), defining its logic and data paths.
+
+### 2. **RTL Synthesis**
+   - Converts RTL code into a gate-level netlist, which is a collection of standard cells like AND gates, flip-flops, and multiplexers.
+   - Optimized for area, power, and timing.
+
+### 3. **Floor and Power Planning**
+   - Partitions the chip area, places major components, and defines the power grid and I/O placement to optimize area, power distribution, and signal flow.
+
+### 4. **Placement**
+   - Assigns physical locations to cells in a way that minimizes wire length, reduces signal delay, and meets design constraints.
+
+### 5. **Clock Tree Synthesis (CTS)**
+   - Optimizes the clock distribution network, ensuring even distribution to all flip-flops and registers to reduce clock skew.
+
+### 6. **Routing**
+   - Connects components based on placement, optimizing wire paths to maintain signal integrity, minimize congestion, and meet design rules.
+
+### 7. **Sign-off**
+   - The final verification stage, ensuring the design meets functionality, performance, power, and reliability targets.
+   - This includes timing analysis, power analysis, and physical verification.
+
+### 8. **GDSII File Generation**
+   - Generates the **GDSII** file containing the complete layout needed for chip fabrication. This file is used by manufacturers to create the photomasks required for chip production.
+
+---
+
+## **Simplified RTL to GDS Flow**
+
+1. **RTL Design:**
+   - Describes the circuit’s functionality using HDLs like Verilog or VHDL.
+
+2. **RTL Synthesis:**
+   - Converts RTL into a gate-level netlist by mapping it to standard cells and optimizing for area, power, and timing.
+
+3. **Floor and Power Planning:**
+   - Plans the chip area, optimizes power grid and I/O placements.
+
+4. **Placement:**
+   - Assigns physical locations to the cells to minimize wire length and reduce signal delays.
+
+5. **Clock Tree Synthesis (CTS):**
+   - Optimizes the clock network to balance signal distribution and reduce skew.
+
+6. **Routing:**
+   - Ensures optimal wire paths between cells, meeting design rules.
+
+7. **Sign-off:**
+   - Verifies that all design constraints, including power, performance, and area, are met.
+
+8. **GDSII File Generation:**
+   - Final layout files are generated for fabrication.
+
+---
+
+## **OpenLane ASIC Flow**
+
+The **OpenLane ASIC Flow** consists of a set of tools and steps to carry out the design and verification of an ASIC.
+
+### **Key Tools and Steps:**
+
+- **RTL Synthesis, Technology Mapping, and Formal Verification:**
+  - Tools: Yosys (for RTL synthesis), ABC (for technology mapping and formal verification).
+
+- **Static Timing Analysis:**
+  - Tools: OpenSTA (for static timing analysis).
+
+- **Floor Planning:**
+  - Tools: init_fp (initial floorplanning), ioPlacer (I/O placement), pdn (power distribution planning), tapcell (tap cell insertion).
+
+- **Placement:**
+  - Tools: RePLace (global placement), Resizer (optional resizing), OpenPhySyn (placement), OpenDP (detailed placement).
+
+- **Clock Tree Synthesis:**
+  - Tools: TritonCTS (for clock tree synthesis).
+
+- **Fill Insertion:**
+  - Tools: OpenDP (for filler placement).
+
+- **Routing:**
+  - Tools: FastRoute (for global routing), TritonRoute (for detailed routing).
+
+- **SPEF Extraction:**
+  - Tools: OpenRCX (or SPEF-Extractor for parasitic extraction).
+
+- **GDSII Streaming Out:**
+  - Tools: Magic and KLayout (for viewing and editing GDSII files).
+
+- **Design Rule Checking (DRC):**
+  - Tools: Magic and KLayout (for DRC checks).
+
+- **Layout vs. Schematic (LVS) Check:**
+  - Tools: Netgen (for LVS checks).
+
+- **Antenna Checks:**
+  - Tools: Magic (for antenna checks).
+
+---
+
+  
+ </details>
+
+ 
+</details>
