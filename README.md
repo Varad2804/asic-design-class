@@ -2468,5 +2468,52 @@ sta pre_sta.conf
 
 NOR gate of drive strength 2 is driving 5 fanouts
 
+   ![Alt text](Day4/27.png)
+
+Run the following commands to optimise timing:
+```bash
+report_net -connections _13111_
+replace_cell _16171_ sky130_fd_sc_hd__nor3_2
+report_checks -fields {net cap slew input_pins} -digits 4
+```
+
+   ![Alt text](Day4/28.png)
+
+We can observe that the tns has reduced to -402.45 from -3851.51 and wns has reduced to -5.44 from -36.63
+
+Clock tree synthesis TritonCTS and signal integrity
+
+Clock Tree Synthesis (CTS) techniques vary based on design needs:
+
+Balanced Tree CTS: Uses a balanced binary-like tree for equal path lengths, minimizing clock skew but with moderate power efficiency.
+
+H-tree CTS: Employs an "H"-shaped structure, good for large areas and power efficiency.
+
+![image](https://github.com/user-attachments/assets/a98268f1-881a-4551-92df-80d3c5e72bb4)
+
+
+
+Star CTS: Distributes the clock from a central point, minimizing skew but requiring more buffers near the source.
+
+Global-Local CTS: Combines star and tree topologies, with a global tree for clock domains and local trees within domains, balancing global and local timing.
+
+Mesh CTS: Uses a grid pattern ideal for structured designs, balancing simplicity and skew.
+
+Adaptive CTS: Dynamically adjusts based on timing and congestion, offering flexibility but with added complexity.
+
+Crosstalk
+
+Crosstalk is interference from overlapping electromagnetic fields between adjacent circuits, causing unwanted signals. In VLSI, it can lead to data corruption, timing issues, and higher power consumption. Mitigation strategies include optimized layout and routing, shielding, and clock gating to reduce dynamic power and minimize crosstalk effects.
+
+![image](https://github.com/user-attachments/assets/f22893c8-4733-4152-bb5c-65613601719f)
+
+Clock Net Shielding
+
+Clock net shielding prevents glitches by isolating the clock network, using shields connected to VDD or GND that don’t switch. It reduces interference by isolating clocks from other signals, often with dedicated routing layers and clock buffers. Additionally, clock domain isolation helps prevent cross-domain interference, avoiding metastability and maintaining synchronization.
+
+![image](https://github.com/user-attachments/assets/11eb37f6-6e2f-46b2-9a1e-78f4a255a48d)
+
+
+
 </details>
 </details>
