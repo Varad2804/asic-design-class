@@ -1908,6 +1908,7 @@ The **GUNA software** plays a key role in generating the required .lib files tha
 
 # Day-3
 <details>
+	
 ### CMOS inverter ngspice simulations
 Creating a SPICE Deck for a CMOS Inverter Simulation
 
