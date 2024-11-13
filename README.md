@@ -1904,5 +1904,101 @@ The **GUNA software** plays a key role in generating the required .lib files tha
 
 
 </details>
- 
+
+### CMOS inverter ngspice simulations
+Creating a SPICE Deck for a CMOS Inverter Simulation
+
+1. Netlist Creation:
+
+    Define component connections (netlist) for the CMOS inverter.
+    Label nodes for input, output, ground, and supply.
+
+2. Device Sizing:
+
+    Specify Width-to-Length (W/L) ratios for PMOS and NMOS transistors.
+    Ensure PMOS width is 2x to 3x larger than NMOS width.
+
+3. Voltage Levels:
+
+    Set gate and supply voltages.
+
+4. Node Naming:
+
+    Assign node names (e.g., VDD, GND, IN, OUT) for clarity in the SPICE netlist.
+   
+ ![image](https://github.com/user-attachments/assets/fb4232d1-bfc3-4041-9cc0-933e747750c9)
+
+ ```bash
+***syntax for PMOS and NMOS desription***
+[component name] [drain] [gate] [source] [substrate] [transistor type] W=[width] L=[length]
+
+ ***simulation commands***
+.op --- is the start of SPICE simulation operation where Vin sweeps from 0 to 2.5 with 0.5 steps
+tsmc_025um_model.mod  ----  model file which contains the technological parameters for the 0.25um NMOS and PMOS
+```
+
+Commands to simulate in SPICE:
+
+```bash
+source [filename].cir
+run
+setplot 
+dc1 
+plot out vs in
+```
+
+![image](https://github.com/user-attachments/assets/3b386b0b-3b97-41b7-9892-4a7037cefc5a)
+
+Switching Threshold VmVm​ of a CMOS Inverter
+
+Definition:
+
+    The switching threshold VmVm​ is the critical voltage at which a CMOS inverter switches between outputting a "0" and a "1".
+    At VmVm​, both PMOS and NMOS transistors are in saturation, resulting in high leakage current.
+
+Effects of Transistor Sizing:
+
+    If PMOS is thicker (wider) than NMOS, VmVm​ is higher (e.g., 1.2V vs. 1V).
+    If NMOS is thicker than PMOS, VmVm​ is lower.
+
+Leakage Current:
+
+    At VmVm​, both transistors are turned on, causing current to flow directly from VDD to Ground, known as leakage current.
+
+Simulation to Find VmVm​:
+```bash
+Vin in 0 2.5
+*** Simulation Command ***
+.op
+.dc Vin 0 2.5 0.05
+```
+
+![image](https://github.com/user-attachments/assets/81c726ff-ce36-47bf-9185-acd1673a2814)
+
+Transient analysis is used for finding propagation delay. SPICE transient analysis uses pulse input shown below:
+
+![image](https://github.com/user-attachments/assets/cfbea221-7c7c-46ed-9701-5fb45e4a30e1)
+
+The simulation commands:
+```bash
+Vin in 0 0 pulse 0 2.5 0 10p 10p 1n 2n 
+*** Simulation Command ***
+.op
+.tran 10p 4n
+```
+Result of SPICE simulation for transient analysis:
+![image](https://github.com/user-attachments/assets/ffc7ca1d-c01a-42b9-bae6-e0d610e74799)
+
+Now, we clone the custom inverter:
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane
+git clone https://github.com/nickson-jose/vsdstdcelldesign
+cd vsdstdcelldesign
+cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech .
+ls
+magic -T sky130A.tech sky130_inv.mag &
+```
+
+
 </details>
