@@ -2265,6 +2265,7 @@ Now, run openlane flow synthesis:
 cd Desktop/work/tools/openlane_working_dir/openlane
 docker
 ```
+   ![Alt text](Day4/7.png)
 
 ```bash
 ./flow.tcl -interactive
@@ -2274,6 +2275,11 @@ set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
 run_synthesis
 ```
+   ![Alt text](Day4/8.png)
+   
+   ![Alt text](Day4/9.png)
+   
+   ![Alt text](Day4/10.png)
 
 
 </details>
