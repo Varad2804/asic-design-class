@@ -1749,15 +1749,11 @@ run_synthesis
 run_floorplan
 ```
 
-```bash
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/09-11_07-10/results/floorplan
-gedit picorv32a.floorplan.def
-```
 
 Now, run the below commands in a new terminal:
 
 ```bash
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/09-11_07-10/results/floorplan
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs12-11_16-11/results/floorplan
 gedit picorv32a.floorplan.def
 ```
 
@@ -1777,7 +1773,7 @@ To view the floorplan in magic. Open a new terminal and run the below commands:
 Now we can view the floorpan using magic. This can be done in new terminal:
 
 ```bash
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/floorplan/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/12-11_16-11/results/floorplan/
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
 
@@ -1790,7 +1786,7 @@ run_placement
 ```
 
 ```bash
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/placement/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/12-11_16-11/results/placement/
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
 
