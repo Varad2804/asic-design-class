@@ -2302,13 +2302,45 @@ set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
 echo $::env(SYNTH_STRATEGY)
 set ::env(SYNTH_STRATEGY) "DELAY 3"
-echo $::env(SYNTH_BUFFERING
+echo $::env(SYNTH_BUFFERING)
 echo $::env(SYNTH_SIZING)
 set ::env(SYNTH_SIZING) 1
 echo $::env(SYNTH_DRIVING_CELL)
 run_synthesis
 ```
+   ![Alt text](Day4/11.png)
+   
+   ![Alt text](Day4/12.png)
+   
+   ![Alt text](Day4/13.png)
+   
+Now, run floorplan:
+```bash
+run_floorplan
+```
+   ![Alt text](Day4/14.png)
 
+   ![Alt text](Day4/15.png)
+
+Since we are facing unexpected un-explainable error while using run_floorplan command, we can instead use the following set of commands available based on information from Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl and also based on Floorplan Commands section in Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md
+
+```bash
+init_floorplan
+place_io
+tap_decap_or
+```
+
+Now, do placement
+```bash
+run_placement
+```
+
+Now, open a new terminal and run the below commands to load placement def in magic
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_20-00/results/placement/
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
 
 </details>
 </details>
