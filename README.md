@@ -2002,6 +2002,11 @@ cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/
 ls
 magic -T sky130A.tech sky130_inv.mag &
 ```
+   ![Alt text](Day3/1.png)
+
+   ![Alt text](Day3/2.png)
+
+
 
 ### Inception of Layout CMOS Fabrication Process
 
@@ -2058,7 +2063,13 @@ magic -T sky130A.tech sky130_inv.mag &
 ![image](https://github.com/user-attachments/assets/523de5eb-63b3-41c2-8e96-f17d24b8365a)
 
 Inverter layout:
+
+   ![Alt text](Day3/2.png)
+
 Identify NMOS:
+
+   ![Alt text](Day3/2.png)
+
 
 Spice extraction of inverter in Magic. Run these in the tkcon window:
 ```bash
@@ -2068,8 +2079,13 @@ extract all
 ext2spice cthresh 0 rthresh 0
 ext2spice
 ```
+   
+   ![Alt text](Day3/3.png)
 
-image:
+
+To view the spice file:
+
+   ![Alt text](Day3/4.png)
 
 
 Now modify the `sky130_inv.spice` file to find the transient response:
@@ -2111,10 +2127,14 @@ Now, simulate the spice netlist:
 ```bash
 ngspice sky130_inv.spice
 ```
+   ![Alt text](Day3/5.png)
 
 ```bash
 plot y vs time a
 ```
+   ![Alt text](Day3/6.png)
+
+
 Using this transient response, we will now characterize the cell's slew rate and propagation delay:
 
 Rise Transition: Time taken for the output to rise from 20% to 80% of max value Fall Transition: Time taken for the output to fall from 80% to 20% of max value Cell Rise delay: difference in time(50% output rise) to time(50% input fall) Cell Fall delay: difference in time(50% output fall) to time(50% input rise)
@@ -2137,13 +2157,23 @@ ls -al
 gvim .magicrc
 magic -d XR &
 ```
+   ![Alt text](Day3/7.png)
+
+   ![Alt text](Day3/8.png)
+
 
 First load the poly file by load poly.mag on tkcon window.
+
+   ![Alt text](Day3/9.png)
 
 
 We can see that Poly.9 is incorrect.
 
 Add the below commands in the sky130A.tech
+
+   ![Alt text](Day3/10.png)
+
+   ![Alt text](Day3/11.png)
 
 
 ```bash
@@ -2151,6 +2181,9 @@ tech load sky130A.tech
 drc check
 drc why
 ```
+   ![Alt text](Day3/12.png)
+
+   ![Alt text](Day3/13.png)
 
 </details>
 
