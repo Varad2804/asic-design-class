@@ -2281,6 +2281,35 @@ run_synthesis
    
    ![Alt text](Day4/10.png)
 
+Delay Tables
+
+Role of Delay:
+Critical in cell timing, influenced by input transition and output load.
+Same cell types can have varying delays due to wire resistance and capacitance differences.
+
+Delay Tables:
+Use 2D arrays with input slew and load capacitance for each buffer size.
+Timing models compute buffer delays from these tables.
+Algorithms interpolate to estimate delays accurately, maintaining signal integrity across varying load conditions.
+
+![image](https://github.com/user-attachments/assets/3f67e39d-8351-4f1f-97cb-19c85e507403)
+
+Fixing slack:
+```bash
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a -tag 13-11_20-00 -overwrite
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+echo $::env(SYNTH_STRATEGY)
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+echo $::env(SYNTH_BUFFERING
+echo $::env(SYNTH_SIZING)
+set ::env(SYNTH_SIZING) 1
+echo $::env(SYNTH_DRIVING_CELL)
+run_synthesis
+```
+
 
 </details>
 </details>
