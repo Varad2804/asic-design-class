@@ -2451,6 +2451,22 @@ set ::env(SYNTH_SIZING) 1
 set ::env(SYNTH_MAX_FANOUT) 4
 echo $::env(SYNTH_DRIVING_CELL)
 run_synthesis
+```
+   ![Alt text](Day4/24.png)
+
+Commands to run STA:
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane
+sta pre_sta.conf
+```
+
+   ![Alt text](Day4/25.png)
+
+   ![Alt text](Day4/26.png)
+
+### Basic timing ECO
+
+NOR gate of drive strength 2 is driving 5 fanouts
 
 </details>
 </details>
