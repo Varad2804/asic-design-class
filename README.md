@@ -2513,7 +2513,21 @@ Clock net shielding prevents glitches by isolating the clock network, using shie
 
 ![image](https://github.com/user-attachments/assets/11eb37f6-6e2f-46b2-9a1e-78f4a255a48d)
 
+Now to insert this updated netlist to PnR flow and we can use write_verilog and overwrite the synthesis netlist but before that we are going to make a copy of the old old netlist:
 
+Run the following commands:
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_21-03/results/synthesis/
+ls
+cp picorv32a.synthesis.v picorv32a.synthesis_old.v
+ls
+```
+Commands to write verilog:
+```bash
+write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/25-03_18-52/results/synthesis/picorv32a.synthesis.v
+exit
+```
+Verified that the netlist is overwritten
 
 </details>
 </details>
