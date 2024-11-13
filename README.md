@@ -1905,6 +1905,9 @@ The **GUNA software** plays a key role in generating the required .lib files tha
 
 </details>
 
+
+# Day-3
+<details>
 ### CMOS inverter ngspice simulations
 Creating a SPICE Deck for a CMOS Inverter Simulation
 
@@ -2000,5 +2003,175 @@ ls
 magic -T sky130A.tech sky130_inv.mag &
 ```
 
+### Inception of Layout CMOS Fabrication Process
 
+1. Substrate Preparation:
+
+    Start with a silicon wafer substrate.
+
+2. N-Well Formation:
+
+    Create N-well regions using phosphorus ion implantation or diffusion.
+
+3. P-Well Formation:
+
+    Form P-well regions using boron ion implantation or diffusion.
+
+4. Gate Oxide Deposition:
+
+    Deposit a thin silicon dioxide layer as the gate oxide.
+
+5. Poly-Silicon Deposition:
+
+    Deposit polysilicon on the gate oxide for the gate electrode.
+
+6. Poly-Silicon Masking and Etching:
+
+    Use a photoresist mask to define polysilicon areas and etch the rest.
+
+7. N-Well Masking and Implantation:
+
+    Mask N-well areas and implant phosphorus impurities.
+
+8. P-Well Masking and Implantation:
+
+    Mask P-well areas and implant boron impurities.
+
+9. Source/Drain Implantation:
+
+    Implant dopants to create source and drain regions.
+
+10. Gate Formation: - Define the gate electrode by etching the polysilicon layer.
+
+11. Source/Drain Masking and Etching: - Mask source/drain regions and etch the oxide layer.
+
+12. Contact/Via Formation: - Etch contact holes/vias to expose underlying regions.
+
+13. Metal Deposition: - Deposit a metal layer (aluminum or copper) for interconnects.
+
+14. Metal Masking and Etching: - Mask and etch to define metal interconnect patterns.
+
+15. Passivation Layer Deposition: - Deposit a protective silicon dioxide or nitride layer.
+
+16. Final Testing and Packaging: - Test the wafer, separate working chips, and package them.
+
+![image](https://github.com/user-attachments/assets/523de5eb-63b3-41c2-8e96-f17d24b8365a)
+
+Inverter layout:
+Identify NMOS:
+
+Spice extraction of inverter in Magic. Run these in the tkcon window:
+```bash
+# Check current directory
+pwd
+extract all
+ext2spice cthresh 0 rthresh 0
+ext2spice
+```
+
+image:
+
+
+Now modify the `sky130_inv.spice` file to find the transient response:
+
+```bash
+* SPICE3 file created from sky130_inv.ext - technology: sky130A
+
+.option scale=0.01u
+.include ./libs/pshort.lib
+.include ./libs/nshort.lib
+
+//.subckt sky130_inv A Y VPWR VGND
+M1000 Y A VGND VGND nshort_model.0 w=35 l=23
++  ad=1.44n pd=0.152m as=1.37n ps=0.148m
+M1001 Y A VPWR VPWR pshort_model.0 w=37 l=23
++  ad=1.44n pd=0.152m as=1.52n ps=0.156m
+
+VDD VPWR 0 3.3V
+VSS VGND 0 0V
+Va A VGND PULSE(0V 3.3V 0 0.1ns 0.1ns 2ns 4ns)
+
+C0 A VPWR 0.0774f
+C1 VPWR Y 0.117f
+C2 A Y 0.0754f
+C3 Y VGND 2f
+C4 A VGND 0.45f
+C5 VPWR VGND 0.781f
+//.ends
+
+.tran 1n 20n
+.control
+run
+.endc
+.end
+```
+
+Now, simulate the spice netlist:
+
+```bash
+ngspice sky130_inv.spice
+```
+
+```bash
+plot y vs time a
+```
+Using this transient response, we will now characterize the cell's slew rate and propagation delay:
+
+Rise Transition: Time taken for the output to rise from 20% to 80% of max value Fall Transition: Time taken for the output to fall from 80% to 20% of max value Cell Rise delay: difference in time(50% output rise) to time(50% input fall) Cell Fall delay: difference in time(50% output fall) to time(50% input rise)
+
+```bash
+Rise Transition : 2.24638 - 2.18242 =  0.06396 ns = 63.96 ps
+Fall Transition : 4.0955 - 4.05536 =  0.0419 ns = 41.9 ps
+Cell Rise Delay : 2.21144 - 2.15008 = 0.06136 ns = 61.36 ps
+Cell Fall Delay : 4.07807 - 4.05 =0.02 ns = 20 ps
+```
+Magic Tool options and DRC Rules:
+
+Now, go to home directory and run the below commands:
+```bash
+cd
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+tar xfz drc_tests.tgz
+cd drc_tests
+ls -al
+gvim .magicrc
+magic -d XR &
+```
+
+First load the poly file by load poly.mag on tkcon window.
+
+
+We can see that Poly.9 is incorrect.
+
+Add the below commands in the sky130A.tech
+
+
+```bash
+tech load sky130A.tech
+drc check
+drc why
+```
+
+</details>
+
+# Day-4:
+<details>
+	
+	
+ ###  Pre-layout timing analysis and importance of good clock tree:
+
+ Commands to extract tracks.info file:
+
+ ```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+cd ../../pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/
+less tracks.info
+```
+Commands for tkcon window to set grid as tracks of locali layer
+
+```bash
+grid 0.46um 0.34um 0.23um 0.17um
+```
+
+</details>
 </details>
