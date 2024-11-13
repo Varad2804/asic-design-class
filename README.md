@@ -1416,7 +1416,7 @@ Table summarising all values for different lib files:
 # Task-13 Advanced Physical Design using OpenLane using Sky130
 <details>
 
-## Day-1
+# Day-1
 
  <details>
 	
