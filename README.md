@@ -1740,6 +1740,8 @@ Run the following commands:
 cd Desktop/work/tools/openlane_working_dir/openlane
 docker
 ```
+   ![Alt text](Day2/1.png)
+
 
 ```bash
 ./flow.tcl -interactive
@@ -1748,6 +1750,7 @@ prep -design picorv32a
 run_synthesis
 run_floorplan
 ```
+   ![Alt text](Day2/2.png)
 
 
 Now, run the below commands in a new terminal:
@@ -1756,6 +1759,8 @@ Now, run the below commands in a new terminal:
 cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs12-11_16-11/results/floorplan
 gedit picorv32a.floorplan.def
 ```
+   ![Alt text](Day2/3.png)
+
 
 According to floorplan definition:
 
@@ -1776,6 +1781,7 @@ Now we can view the floorpan using magic. This can be done in new terminal:
 cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/12-11_16-11/results/floorplan/
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
+   ![Alt text](Day2/4.png)
 
 
 
@@ -1784,12 +1790,15 @@ Command to run placement:
 ```bash
 run_placement
 ```
+   ![Alt text](Day2/5.png)
+
 
 ```bash
 cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/12-11_16-11/results/placement/
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
 
+   ![Alt text](Day2/6.png)
 
 
 # **Cell Design and Characterization Flow**
