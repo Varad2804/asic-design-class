@@ -2184,8 +2184,6 @@ drc why
 ```
    ![Alt text](Day3/12.png)
 
-   ![Alt text](Day3/13.png)
-
 </details>
 
 # Day-4:
