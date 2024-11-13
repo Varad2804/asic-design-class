@@ -2205,6 +2205,74 @@ Commands for tkcon window to set grid as tracks of locali layer
 ```bash
 grid 0.46um 0.34um 0.23um 0.17um
 ```
+   ![Alt text](Day4/1.png)
+
+With grid:
+   
+   ![Alt text](Day4/2.png)
+
+Now, save it by giving a custom name:
+```bash
+save sky130_varinv.mag
+```
+   ![Alt text](Day4/3.png)
+
+Now, open it by using the following commands:
+```bash
+magic -T sky130A.tech sky130_varinv.mag &
+```
+   ![Alt text](Day4/4.png)
+
+Now, type the following command in tkcon window:
+```bash
+lef write
+```
+   ![Alt text](Day4/5.png)
+
+   ![Alt text](Day4/6.png)
+
+Modify config.tcl:
+```bash
+# Design
+set ::env(DESIGN_NAME) "picorv32a"
+
+set ::env(VERILOG_FILES) "./designs/picorv32a/src/picorv32a.v"
+set ::env(SDC_FILES) "./designs/picorv32a/src/picorv32a.sdc"
+
+
+set ::env(CLOCK_PERIOD) "5.000"
+set ::env(CLOCK_PORT) "clk"
+
+set ::env(CLOCK_NET) $::env(CLOCK_PORT) 
+
+
+set ::env(LIB_SYNTH) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib "
+set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib"
+set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib "
+set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+
+set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]   ## this is the new line added to the existing config.tcl file
+
+set filename $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/$::env(PDK)_$::env(STD_CELL_LIBRARY)_config.tcl
+if { [file exists $filename] == 1 } {
+  source $filename
+}
+```
+Now, run openlane flow synthesis:
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane
+docker
+```
+
+```bash
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+run_synthesis
+```
+
 
 </details>
 </details>
