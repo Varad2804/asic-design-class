@@ -2200,6 +2200,8 @@ cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
 cd ../../pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/
 less tracks.info
 ```
+   ![Alt text](Day3/13.png)
+
 Commands for tkcon window to set grid as tracks of locali layer
 
 ```bash
