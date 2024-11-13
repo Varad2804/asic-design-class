@@ -1781,9 +1781,6 @@ cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
 
-![image](https://github.com/user-attachments/assets/37aa0dea-049a-4d9a-8726-6863760bf188)
-
-![image](https://github.com/user-attachments/assets/5de361a9-089d-47c7-b155-8ae49476029a)
 
 
 Command to run placement:
@@ -1792,9 +1789,6 @@ Command to run placement:
 run_placement
 ```
 
-![image](https://github.com/user-attachments/assets/ddc3b3fa-727d-4f07-8215-37eacbe44a11)
-
-![image](https://github.com/user-attachments/assets/76552053-846b-45df-a882-2a14d1d73e23)
 
 
 # **Cell Design and Characterization Flow**
