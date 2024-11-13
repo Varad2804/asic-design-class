@@ -1740,6 +1740,9 @@ Run the following commands:
 cd Desktop/work/tools/openlane_working_dir/openlane
 docker
 ```
+
+Snapshots of image showing synthesis was successful and floorplan was being run now.
+
    ![Alt text](Day2/1.png)
 
 
