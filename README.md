@@ -2493,23 +2493,57 @@ H-tree CTS: Employs an "H"-shaped structure, good for large areas and power effi
 
 
 
-Star CTS: Distributes the clock from a central point, minimizing skew but requiring more buffers near the source.
+### Clock Tree Synthesis (CTS) Topologies
 
-Global-Local CTS: Combines star and tree topologies, with a global tree for clock domains and local trees within domains, balancing global and local timing.
+### Star CTS:
 
-Mesh CTS: Uses a grid pattern ideal for structured designs, balancing simplicity and skew.
+    Distributes the clock from a central point.
+    Minimizes skew but requires more buffers near the source.
 
-Adaptive CTS: Dynamically adjusts based on timing and congestion, offering flexibility but with added complexity.
+### Global-Local CTS:
 
-Crosstalk
+    Combines star and tree topologies.
+    Uses a global tree for clock domains and local trees within domains.
+    Balances global and local timing.
 
-Crosstalk is interference from overlapping electromagnetic fields between adjacent circuits, causing unwanted signals. In VLSI, it can lead to data corruption, timing issues, and higher power consumption. Mitigation strategies include optimized layout and routing, shielding, and clock gating to reduce dynamic power and minimize crosstalk effects.
+### Mesh CTS:
+
+    Employs a grid pattern ideal for structured designs.
+    Balances simplicity and skew.
+
+### Adaptive CTS:
+
+    Dynamically adjusts based on timing and congestion.
+    Offers flexibility but adds complexity.
+
+### Crosstalk
+
+    Definition:
+        Interference from overlapping electromagnetic fields between adjacent circuits, causing unwanted signals.
+
+    Impact in VLSI:
+        Leads to data corruption, timing issues, and higher power consumption.
+
+    Mitigation Strategies:
+        Optimized layout and routing.
+        Shielding.
+        Clock gating to reduce dynamic power and minimize crosstalk effects.
 
 ![image](https://github.com/user-attachments/assets/f22893c8-4733-4152-bb5c-65613601719f)
 
 Clock Net Shielding
 
-Clock net shielding prevents glitches by isolating the clock network, using shields connected to VDD or GND that don’t switch. It reduces interference by isolating clocks from other signals, often with dedicated routing layers and clock buffers. Additionally, clock domain isolation helps prevent cross-domain interference, avoiding metastability and maintaining synchronization.
+    Purpose:
+        Prevents glitches and reduces interference by isolating the clock network.
+
+    Method:
+        Uses shields connected to VDD or GND that do not switch.
+        Dedicated routing layers and clock buffers are often employed.
+
+    Benefits:
+        Isolates clocks from other signals.
+        Helps prevent cross-domain interference.
+        Avoids metastability and maintains synchronization through clock domain isolation.
 
 ![image](https://github.com/user-attachments/assets/11eb37f6-6e2f-46b2-9a1e-78f4a255a48d)
 
@@ -2528,6 +2562,66 @@ write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/des
 exit
 ```
 Verified that the netlist is overwritten
+
+   ![Alt text](Day4/29.png)
+
+Now, run the following commands:
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane
+docker
+./flow.tcl -interactive
+prep -design picorv32a -tag 13-11_21-03 -overwrite
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+set ::env(SYNTH_SIZING) 1
+run_synthesis
+init_floorplan
+place_io
+tap_decap_or
+run_placement
+run_cts
+```
+   ![Alt text](Day4/30.png)
+
+   ![Alt text](Day4/31.png)
+
+   ![Alt text](Day4/32.png)
+   
+   ![Alt text](Day4/33.png)
+
+### Setup Timing Analysis Using Real Clocks
+
+    Real Clock Factors:
+        Clock Skew: Difference in clock signal arrival times at various parts of the circuit due to physical delays.
+            Affects setup and hold timing margins.
+        Clock Jitter: Variability in the clock period caused by power, temperature, and noise fluctuations.
+            Leads to uncertainty in clock edge timing.
+
+    Importance:
+        Both clock skew and jitter are crucial for accurate timing analysis.
+        Ensures the design performs reliably in real-world conditions.
+
+![image](https://github.com/user-attachments/assets/7c582e91-e8af-4318-a258-aed3e329a4b8)
+
+![image](https://github.com/user-attachments/assets/1f111d25-88b0-411a-bc3f-0626c00175c7)
+
+Now, enter the following commands for Post-CTS OpenROAD timing analysis:
+```bash
+openroad
+read_lef /openLANE_flow/designs/picorv32a/runs/13-11_21-03/tmp/merged.lef
+read_def /openLANE_flow/designs/picorv32a/runs/13-11_21-03/results/cts/picorv32a.cts.def
+write_db pico_cts.db
+read_db pico_cts.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/13-11_21-03/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+link_design picorv32a
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+set_propagated_clock [all_clocks]
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+exit
+```
 
 </details>
 </details>
