@@ -2069,7 +2069,15 @@ Inverter layout:
 
 Identify NMOS:
 
-   ![Alt text](Day3/2.png)
+![image](https://github.com/user-attachments/assets/a5d2c57d-cbe0-4441-b32e-fa0512d66876)
+
+![image](https://github.com/user-attachments/assets/d0d13bbb-45d7-4b82-aef5-fe85866e2913)
+
+![image](https://github.com/user-attachments/assets/c74b6395-30df-47af-9e59-bd94c82980bd)
+
+![image](https://github.com/user-attachments/assets/e54fc517-03fb-4a84-b681-5d15fc8ecb8e)
+
+![image](https://github.com/user-attachments/assets/8c45ed4f-c434-43d6-8201-feceaf33e8c3)
 
 
 Spice extraction of inverter in Magic. Run these in the tkcon window:
