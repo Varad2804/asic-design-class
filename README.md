@@ -2662,4 +2662,63 @@ echo $::env(CTS_CLK_BUFFER_LIST)
    ![Alt text](Day4/38.png)
 
 </details>
+
+# Day-5
+<details>
+
+## Maze Routing and Lee's Algorithm
+
+Routing creates physical connections between pins, and Maze Routing algorithms, like Lee's algorithm, find efficient paths on a routing grid.
+
+#### Lee's Algorithm:
+
+    Starts at the source pin and assigns incremental labels to neighboring cells until the target pin is reached.
+    Prioritizes L-shaped routes, using zigzag paths if necessary.
+    Effective for finding the shortest path between two pins.
+    Can be slow for large-scale designs, leading to the adoption of faster alternatives for complex routing tasks.
+
+![image](https://github.com/user-attachments/assets/d4ec6fcb-b2c8-4877-b0c7-435367501d16)
+
+Design Rule Check:
+Command to generate Power Distribution Network (PDN):
+```bash
+gen_pdn
+```
+Now, in a new terminal
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_21-03/tmp/floorplan/
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read 18-pdn.def &
+```
+   ![Alt text](Day5/1.png)
+
+   ![Alt text](Day5/2.png)
+
+
+## Power Distribution Network (PDN) Generation
+
+When the PDN generation command is issued, the system uses the design_cts.def file to create the PDN.
+
+### Components of the PDN:
+
+    Power Rings:
+        Power is drawn from VDD and VSS pads to the power rings.
+    Straps:
+        Horizontal and vertical straps connect to the power rings to distribute power.
+        Straps channel power to the rails connected to standard cells.
+    Rails:
+        Placed at standard cell height intervals, aligning with multiples of the track pitch (2.72 in this design).
+        Ensure proper power delivery to all standard cells.
+
+### Design Details:
+
+    Metal Layers:
+        Straps are placed on metal layers 4 and 5.
+        Standard cell rails are on metal layer 1.
+    Vias:
+        Used to interconnect different metal layers.
+        Ensure seamless power flow from pads to cells across the metal levels.
+
+
+</details>
 </details>
