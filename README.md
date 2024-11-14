@@ -2524,7 +2524,7 @@ ls
 ```
 Commands to write verilog:
 ```bash
-write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/25-03_18-52/results/synthesis/picorv32a.synthesis.v
+write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_21-03/results/synthesis/picorv32a.synthesis.v
 exit
 ```
 Verified that the netlist is overwritten
