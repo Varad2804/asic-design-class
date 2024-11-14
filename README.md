@@ -2740,6 +2740,121 @@ Expanded layout showing the custom inverter sky130_varinv
 
    ![Alt text](Day5/5.png)
 
-Fast route guide present in openlane/designs/picorv32a/runs/13-11_21-03/tmp/routing
+Fast route guide present in `openlane/designs/picorv32a/runs/13-11_21-03/tmp/routing`
+
+   ![Alt text](Day5/6.png)
+
+## TritonRoute
+
+### TritonRoute Detailed Routing
+
+    Overview:
+        Follows pre-processed global route guides.
+        Uses a MILP-based panel routing scheme.
+
+    Routing Types:
+        Intra-Layer Parallel Routing:
+            Simultaneous routing within a single layer.
+        Inter-Layer Sequential Routing:
+            Routing from bottom to top metal layers.
+
+    Layer Preferences:
+        Respects each metal layer's preferred direction as defined in the LEF file (e.g., met1 horizontal, met2 vertical).
+        Minimizes overlapping and potential capacitance issues.
+
+    Benefits:
+        Improved signal integrity.
+![image](https://github.com/user-attachments/assets/d185ab41-152c-4665-b69c-a79c00ce2bc8)
+
+![image](https://github.com/user-attachments/assets/a1126f94-0b67-4ce9-af7d-8a41fbee7292)
+
+### Feature: Pre-Processed Route Guides
+
+    Overview:
+        TritonRoute uses pre-processed route guides from the global router.
+
+    Function:
+        Provides an initial path outline for efficient, detailed routing.
+        Optimizes for connectivity and minimizes conflicts by following predefined paths.
+
+ ![image](https://github.com/user-attachments/assets/7c1f3543-6406-4e60-a03f-c2bb7ac3c644)
+
+### Feature: Inter-Guide Connectivity
+
+    Overview:
+        Ensures seamless connections between adjacent route guides.
+
+    Function:
+        Maintains continuity across guide boundaries.
+        Allows signals to pass smoothly from one guide to the next.
+        Reduces routing gaps and improves overall connectivity throughout the design.
+
+ 
+ ![image](https://github.com/user-attachments/assets/d572bdd4-40d6-471a-aa72-8f3c71c4875b)
+
+
+
+**Intra-layer Routing**: Routing within a single metal layer, performed in parallel to optimize path efficiency.
+
+**Inter-layer Routing**: Sequential routing across metal layers, starting from the bottom, following layer direction rules to minimize interference
+
+![image](https://github.com/user-attachments/assets/802f0c92-99e7-491f-a0ba-59fa63ce661e)
+
+### TritonRoute method to handle connectivity
+#### TritonRoute Connectivity
+
+    Overview:
+        Ensures robust connectivity by following global route guides.
+
+    Routing Management:
+        Intra-Layer Routing:
+            Connects paths within each layer in parallel.
+        Inter-Layer Routing:
+            Links paths sequentially across layers, from bottom to top.
+
+    Benefits:
+        Structured approach helps avoid congestion.
+        Maintains consistent signal flow throughout the design.
+![image](https://github.com/user-attachments/assets/93f385ac-1c37-49d1-b355-db0012df1634)
+
+### Routing Topology Algorithm
+
+A routing topology algorithm defines the structure and path configuration of connections between pins in an integrated circuit. It aims to create an efficient, minimal-cost layout by determining the best routing paths and shapes.
+
+![image](https://github.com/user-attachments/assets/52eec0f5-2114-4c67-8508-2062c7819584)
+
+Commands for SPEF extraction Post-Route parasitic extraction using SPEF extractor
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/scripts/spef_extractor
+python3 main.py -l /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_21-03/tmp/merged.lef -d /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_21-03/results/routing/picorv32a.def
+```
+   ![Alt text](Day5/7.png)
+
+
+Commands for Post-Route OpenSTA timing analysis with the extracted parasitics of the route:
+```bash
+openroad
+read_lef /openLANE_flow/designs/picorv32a/runs/13-11_21-03/tmp/merged.lef
+read_def /openLANE_flow/designs/picorv32a/runs/13-11_21-03/results/routing/picorv32a.def
+write_db pico_route.db
+read_db pico_route.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/13-11_21-03/results/synthesis/picorv32a.synthesis_preroute.v
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+link_design picorv32a
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+set_propagated_clock [all_clocks]
+read_spef /openLANE_flow/designs/picorv32a/runs/13-11_21-03/results/routing/picorv32a.spef
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+exit
+```
+   ![Alt text](Day5/8.png)
+   
+   ![Alt text](Day5/9.png)
+   
+   ![Alt text](Day5/10.png)
+
+---
+
 </details>
 </details>
