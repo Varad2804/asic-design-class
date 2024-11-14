@@ -2069,15 +2069,17 @@ Inverter layout:
 
 Identify NMOS:
 
-![image](https://github.com/user-attachments/assets/a5d2c57d-cbe0-4441-b32e-fa0512d66876)
+![image](https://github.com/user-attachments/assets/45335bb9-a0a8-4b3b-b371-69ad5800f33b)
 
-![image](https://github.com/user-attachments/assets/d0d13bbb-45d7-4b82-aef5-fe85866e2913)
+Identify PMOS:
 
-![image](https://github.com/user-attachments/assets/c74b6395-30df-47af-9e59-bd94c82980bd)
+![image](https://github.com/user-attachments/assets/fc42ec24-942f-48ea-9a57-0caaf59c8676)
 
-![image](https://github.com/user-attachments/assets/e54fc517-03fb-4a84-b681-5d15fc8ecb8e)
+Output Y:
 
-![image](https://github.com/user-attachments/assets/8c45ed4f-c434-43d6-8201-feceaf33e8c3)
+![image](https://github.com/user-attachments/assets/d08d4ed0-c83e-410a-b9a3-2ddb149b5367)
+
+
 
 
 Spice extraction of inverter in Magic. Run these in the tkcon window:
