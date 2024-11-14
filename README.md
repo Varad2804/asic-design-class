@@ -2688,7 +2688,7 @@ Now, in a new terminal
 
 ```bash
 cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_21-03/tmp/floorplan/
-magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read 18-pdn.def &
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read 14-pdn.def &
 ```
    ![Alt text](Day5/1.png)
 
@@ -2718,7 +2718,28 @@ When the PDN generation command is issued, the system uses the design_cts.def fi
     Vias:
         Used to interconnect different metal layers.
         Ensure seamless power flow from pads to cells across the metal levels.
+	
+![image](https://github.com/user-attachments/assets/3953a0b9-ebd8-4f2e-b920-0375ccae0de3)
 
+Now, we perfrom detailed routing using TritonRoute:
+```bash
+echo $::env(CURRENT_DEF)
+echo $::env(ROUTING_STRATEGY)
+run_routing
+```
+   ![Alt text](Day5/3.png)
 
+Now, in a new terminal
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_21-03/results/routing/
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def &
+```
+   ![Alt text](Day5/4.png)
+
+Expanded layout showing the custom inverter sky130_varinv
+
+   ![Alt text](Day5/5.png)
+
+Fast route guide present in openlane/designs/picorv32a/runs/13-11_21-03/tmp/routing
 </details>
 </details>
