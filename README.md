@@ -3469,7 +3469,24 @@ Commands for synthesis:
 ```bash
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
 ```
+![Screenshot from 2024-11-26 12-46-44](https://github.com/user-attachments/assets/a5bf9280-6624-4ad8-9320-0d87f34d7484)
+
+![Screenshot from 2024-11-26 12-47-12](https://github.com/user-attachments/assets/ab047957-50a3-4845-918b-77606d9032c0)
+
+
 Synthesis netlist:
+![Screenshot from 2024-11-26 12-48-08](https://github.com/user-attachments/assets/e73ba263-b13c-4400-a310-6ae09b3e1a1c)
+
+Syntheiss log:
+
+![Screenshot from 2024-11-26 12-48-58](https://github.com/user-attachments/assets/78f884ec-386f-4793-beab-53a2e53c68d7)
+
+Synthesis Check:
+![Screenshot from 2024-11-26 12-49-53](https://github.com/user-attachments/assets/70d54f8d-3530-4a53-99c9-a015315bd154)
+
+Synthesis Stats:
+![Screenshot from 2024-11-26 12-50-56](https://github.com/user-attachments/assets/18f98e9f-7139-48da-abff-aedbfa8d96cb)
+![Screenshot from 2024-11-26 12-51-24](https://github.com/user-attachments/assets/88b4578f-1d42-43fb-bcd6-dedfb2bcfa20)
 
 Commands for floorplan:
 
