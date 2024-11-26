@@ -3318,9 +3318,17 @@ git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scri
 cd OpenROAD-flow-scripts
 sudo ./setup.sh
 ```
+![Screenshot from 2024-11-26 11-48-05](https://github.com/user-attachments/assets/b5879cbb-60f0-4bba-a809-47057d4e7d11)
+
 ```bash
 ./build_openroad.sh --local
 ```
+
+![Screenshot from 2024-11-26 11-47-02](https://github.com/user-attachments/assets/f698f503-ebaa-4f8f-ba63-0e93184dbaed)
+
+![Screenshot from 2024-11-26 11-46-47](https://github.com/user-attachments/assets/dcd8ba59-ebc7-46ea-a094-b53ecf4a7e92)
+
+
 Verify Installation
 
 ```bash
@@ -3330,10 +3338,25 @@ openroad -help
 cd flow
 make
 ```
+
+![Screenshot from 2024-11-26 11-51-12](https://github.com/user-attachments/assets/1f094116-40a4-444f-82eb-d00da89bf9ca)
+
+![Screenshot from 2024-11-26 11-51-30](https://github.com/user-attachments/assets/f74fd72a-07f6-4afc-b3f8-26f7729f71f1)
+
+![Screenshot from 2024-11-26 11-53-31](https://github.com/user-attachments/assets/c95070e1-3711-4b3e-b55a-57c7d723cbb1)
+
+
 ```bash
 make gui_final
 ```
+
+![Screenshot from 2024-11-26 11-54-59](https://github.com/user-attachments/assets/f359ef04-59f9-4511-b7a7-a7f6de9df6ea)
+
+
 ORFS Directory Structure and File formats
+
+![Screenshot from 2024-11-26 11-56-28](https://github.com/user-attachments/assets/d9efd62d-c989-4b1b-9318-7b28891f097f)
+
 
 ```bash
 ├── OpenROAD-flow-scripts             
@@ -3346,6 +3369,7 @@ ORFS Directory Structure and File formats
 │   ├── setup_env.sh     -> Its the source file to source all our OpenROAD rules to run the RTL to GDS flow
 ```
 Now, go to flow directory
+![Screenshot from 2024-11-26 11-56-56](https://github.com/user-attachments/assets/2c7c3b61-e458-4e77-ad2d-682c32e2c361)
 
 ```bash
 ├── flow           
