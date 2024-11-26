@@ -3493,6 +3493,12 @@ Commands for floorplan:
 ```bash
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
 ```
+![Screenshot from 2024-11-26 12-57-06](https://github.com/user-attachments/assets/dbd40112-49ba-419a-a835-b8959e94826c)
+
+```bash
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
+```
+
 ```bash
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk place
 ```
