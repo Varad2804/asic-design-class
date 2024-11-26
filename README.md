@@ -2867,8 +2867,7 @@ exit
 ---
 
 </details>
-<details>
-
+</details>
 
  
 # Task-14: OpenRoad Physical Design
